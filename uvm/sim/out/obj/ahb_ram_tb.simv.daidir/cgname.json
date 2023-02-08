@@ -1,0 +1,86 @@
+{
+    "vcs_paramclassrepository": [
+        "vcs_paramclassrepository",
+        "hEeZs",
+        "module",
+        1
+    ],
+    "std": [
+        "std",
+        "reYIK",
+        "module",
+        2
+    ],
+    "uvm_pkg": [
+        "uvm_pkg",
+        "zr7M1",
+        "module",
+        3
+    ],
+    "uvm_custom_install_verdi_recording": [
+        "uvm_custom_install_verdi_recording",
+        "EbjT3",
+        "module",
+        8
+    ],
+    "_vcs_msglog": [
+        "_vcs_msglog",
+        "zQBzV",
+        "module",
+        4
+    ],
+    "ahb_ram_if": [
+        "ahb_ram_if",
+        "uezFD",
+        "module",
+        14
+    ],
+    "_vcs_unit__3820934895": [
+        "_vcs_unit__3820934895",
+        "b4gw6",
+        "module",
+        5
+    ],
+    "ahb_ram_pkg": [
+        "ahb_ram_pkg",
+        "K6iPN",
+        "module",
+        10
+    ],
+    "uvm_custom_install_recording": [
+        "uvm_custom_install_recording",
+        "nhiwz",
+        "module",
+        6
+    ],
+    "lvc_ahb_if": [
+        "lvc_ahb_if",
+        "mzJKG",
+        "module",
+        13
+    ],
+    "_vcs_DPI_package": [
+        "_vcs_DPI_package",
+        "uM9F1",
+        "module",
+        7
+    ],
+    "lvc_ahb_pkg": [
+        "lvc_ahb_pkg",
+        "v1EvN",
+        "module",
+        9
+    ],
+    "ahb_ram_tb": [
+        "ahb_ram_tb",
+        "xVNya",
+        "module",
+        11
+    ],
+    "...MASTER...": [
+        "SIM",
+        "amcQw",
+        "module",
+        12
+    ]
+}
