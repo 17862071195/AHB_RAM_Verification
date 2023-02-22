@@ -3,11 +3,9 @@
 
 class ahb_ram_virtual_sequencer extends uvm_sequencer;
   ahb_ram_config cfg;
+  lvc_ahb_master_sequencer ahb_mst_sqr;
 
   `uvm_component_utils(ahb_ram_virtual_sequencer)
-
-
-  lvc_ahb_master_sequencer ahb_mst_sqr;
 
   function new(string name ="ahb_ram_virtual_sequencer", uvm_component parent);
     super.new(name, parent);

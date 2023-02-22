@@ -7,38 +7,40 @@ gui_create_pref_key -category {dlg_settings} -key {tableWithImmediatePopup} -val
 
 # State setting overrides
 gui_state_default_create -off -ini
+gui_set_state_value -category Globals -key recent_sessions -value {{gui_load_session -ignore_errors -file /home/verifier/DVT_Code/AHB_RAM/uvm/sim/ahb_ram_debug_wave.do}}
 gui_set_state_value -category Layout -key child_console_size_x -value 2559
-gui_set_state_value -category Layout -key child_console_size_y -value 762
-gui_set_state_value -category Layout -key child_data_coltype -value 93
-gui_set_state_value -category Layout -key child_data_colvalue -value 72
-gui_set_state_value -category Layout -key child_data_colvariable -value 239
-gui_set_state_value -category Layout -key child_data_size_x -value 387
-gui_set_state_value -category Layout -key child_data_size_y -value 488
+gui_set_state_value -category Layout -key child_console_size_y -value 456
+gui_set_state_value -category Layout -key child_data_coltype -value 147
+gui_set_state_value -category Layout -key child_data_colvalue -value 126
+gui_set_state_value -category Layout -key child_data_colvariable -value 293
+gui_set_state_value -category Layout -key child_data_size_x -value 577
+gui_set_state_value -category Layout -key child_data_size_y -value 794
 gui_set_state_value -category Layout -key child_hier_col3 -value {-1}
 gui_set_state_value -category Layout -key child_hier_colhier -value 331
 gui_set_state_value -category Layout -key child_hier_colpd -value 0
-gui_set_state_value -category Layout -key child_hier_size_x -value 380
-gui_set_state_value -category Layout -key child_hier_size_y -value 488
+gui_set_state_value -category Layout -key child_hier_size_x -value 371
+gui_set_state_value -category Layout -key child_hier_size_y -value 794
 gui_set_state_value -category Layout -key child_source_docknewline -value false
 gui_set_state_value -category Layout -key child_source_pos_x -value {-2}
 gui_set_state_value -category Layout -key child_source_pos_y -value {-17}
-gui_set_state_value -category Layout -key child_source_size_x -value 1795
-gui_set_state_value -category Layout -key child_source_size_y -value 484
-gui_set_state_value -category Layout -key child_wave_colname -value 323
-gui_set_state_value -category Layout -key child_wave_colvalue -value 229
-gui_set_state_value -category Layout -key child_wave_left -value 557
-gui_set_state_value -category Layout -key child_wave_right -value 1357
+gui_set_state_value -category Layout -key child_source_size_x -value 1614
+gui_set_state_value -category Layout -key child_source_size_y -value 790
+gui_set_state_value -category Layout -key child_wave_colname -value 276
+gui_set_state_value -category Layout -key child_wave_colvalue -value 276
+gui_set_state_value -category Layout -key child_wave_left -value 556
+gui_set_state_value -category Layout -key child_wave_right -value 1355
 gui_set_state_value -category Layout -key main_pos_x -value 1
-gui_set_state_value -category Layout -key main_pos_y -value 38
+gui_set_state_value -category Layout -key main_pos_y -value 66
 gui_set_state_value -category Layout -key main_size_x -value 2560
-gui_set_state_value -category Layout -key main_size_y -value 1374
+gui_set_state_value -category Layout -key main_size_y -value 1402
 gui_set_state_value -category Layout -key stand_wave_child_pos_x -value {-2}
 gui_set_state_value -category Layout -key stand_wave_child_pos_y -value {-17}
-gui_set_state_value -category Layout -key stand_wave_child_size_x -value 1924
-gui_set_state_value -category Layout -key stand_wave_child_size_y -value 978
-gui_set_state_value -category Layout -key stand_wave_top_pos_y -value 237
-gui_set_state_value -category Layout -key stand_wave_top_size_x -value 2019
-gui_set_state_value -category Layout -key stand_wave_top_size_y -value 1333
+gui_set_state_value -category Layout -key stand_wave_child_size_x -value 1921
+gui_set_state_value -category Layout -key stand_wave_child_size_y -value 855
+gui_set_state_value -category Layout -key stand_wave_top_pos_x -value 1
+gui_set_state_value -category Layout -key stand_wave_top_pos_y -value 149
+gui_set_state_value -category Layout -key stand_wave_top_size_x -value 1917
+gui_set_state_value -category Layout -key stand_wave_top_size_y -value 1122
 gui_create_state_key -category FindDialog -key m_pMatchCase -value_type bool -value false
 gui_create_state_key -category FindDialog -key m_pMatchWord -value_type bool -value false
 gui_create_state_key -category FindDialog -key m_pUseCombo -value_type string -value {}
@@ -48,5 +50,399 @@ gui_state_default_create -off
 # Begin command logging
 gui_set_pref_value -category {Globals} -key {smart_resize} -value {false}
 gui_set_pref_value -category {Globals} -key {smart_resize} -value {true}
-gui_sim_run Ucli -exe out/obj/ahb_ram_tb.simv -args {-ucligui  -a run.log +ntb_random_seed_automatic +UVM_TESTNAME=ahb_ram_smoke_test -cm_dir out/cov.vdb -cm_name ahb_ram_smoke_test_0208203321 -do ahb_ram_sim_run.do} -dir out/obj
+gui_sim_run Ucli -exe out/obj/ahb_ram_tb.simv -args {-ucligui  -a run.log +ntb_random_seed_automatic +UVM_TESTNAME=ahb_ram_smoke_test -cm_dir out/cov.vdb -cm_name ahb_ram_smoke_test_0220222114 -do ahb_ram_sim_run.do} -dir out/obj
+gui_wv_zoom_timerange -id  Wave.1 0 227
+gui_wv_zoom_timerange -id  Wave.1 0 445
+gui_wv_zoom_timerange -id  Wave.1 0 445
+gui_show_window -window  Member.1
+gui_show_window -window  Class.1
+gui_list_set_filter -id Class.1 -text {*mon*}
+gui_list_select -id Class.1 -selected { {$class.lvc_ahb_monitor}   }
+gui_list_action -id  Class.1 {$class.lvc_ahb_monitor}
+gui_sim_watch { -file  $::env(PWD)/../vip_lib/lvc_ahb/lvc_ahb_monitor.sv  -line  26  }
+gui_sim_watch { -file  $::env(PWD)/../vip_lib/lvc_ahb/lvc_ahb_monitor.sv  -line  33  }
+gui_sim_watch { -file  $::env(PWD)/../vip_lib/lvc_ahb/lvc_ahb_monitor.sv  -line  34  }
+gui_sim_watch { -file  $::env(PWD)/../vip_lib/lvc_ahb/lvc_ahb_monitor.sv  -line  40  }
+gui_sim_watch { -file  $::env(PWD)/../vip_lib/lvc_ahb/lvc_ahb_monitor.sv  -line  41  }
+gui_sim_watch { -file  $::env(PWD)/../vip_lib/lvc_ahb/lvc_ahb_monitor.sv  -line  50  }
+gui_sim_watch { -file  $::env(PWD)/../vip_lib/lvc_ahb/lvc_ahb_monitor.sv  -line  49  }
+gui_sim_watch { -file  $::env(PWD)/../vip_lib/lvc_ahb/lvc_ahb_monitor.sv  -line  52  }
+gui_sim_watch { -disable {8}}
+gui_sim_watch { -disable {6}}
+gui_sim_watch { -delete {6}}
+gui_sim_watch { -file  $::env(PWD)/../vip_lib/lvc_ahb/lvc_ahb_monitor.sv  -line  50  }
+gui_sim_watch { -delete {8}}
+gui_sim_watch { -file  $::env(PWD)/../vip_lib/lvc_ahb/lvc_ahb_monitor.sv  -line  52  }
 run
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_src_highlight_item -id Source.1 -lfrom 38 -idxfrom 7 -fileIdFrom 0 -lto 38 -idxto 23 -fileIdTo 0 -selection {collect_trasnfer} -selectionId 0 -replace 0
+gui_src_highlight_item -id Source.1 -lfrom 41 -idxfrom 4 -fileIdFrom 0 -lto 44 -idxto 54 -fileIdTo 0 -selection {@(vif.cb_mon iff vif.cb_mon.htrans == NSEQ); 
+    t.trans_type = trans_type_enum'(vif.cb_mon.htrans);
+    t.xact_type = xact_type_enum'(vif.cb_mon.hwrite);
+    t.burst_type = burst_type_enum'(vif.cb_mon.hburst)} -selectionId 0 -replace 0
+gui_src_highlight_item -id Source.1 -lfrom 54 -idxfrom 14 -fileIdFrom 0 -lto 56 -idxto 1 -fileIdTo 0 -selection {_type = t.all_beat_response[t.current_data_beat_num];
+  endtask
+ 
+} -selectionId 0 -replace 0
+restart
+gui_sim_restart
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_show_window -window  Stack.1
+gui_show_window -window  Local.1
+gui_list_expand -id  Local.1   {Sim:$prog.ahb_ram_tb@0.ahb_ram_tb@37.run_test@37.uvm_root::run_test@37.uvm_root::run_test@37.uvm_root::run_test@40.uvm_phase::m_run_phases@40.unnamed$$_1@40.unnamed$$_1@40.unnamed$$_1@47.uvm_phase::execute_phase@47.master_phase_process@47.master_phase_process@49.uvm_task_phase::execute@49.uvm_task_phase::execute@49.unnamed$$_0@54.uvm_run_phase::exec_task@54.lvc_ahb_master_monitor::run_phase@54.lvc_ahb_monitor::run_phase@54.lvc_ahb_monitor::run_phase@54.lvc_ahb_monitor::run_phase@96.lvc_ahb_monitor::monitor_transactions@96.lvc_ahb_monitor::collect_trasnfer@96.t}
+gui_list_select -id Local.1 -selected  { {Sim:$prog.ahb_ram_tb@0.ahb_ram_tb@37.run_test@37.uvm_root::run_test@37.uvm_root::run_test@37.uvm_root::run_test@40.uvm_phase::m_run_phases@40.unnamed$$_1@40.unnamed$$_1@40.unnamed$$_1@47.uvm_phase::execute_phase@47.master_phase_process@47.master_phase_process@49.uvm_task_phase::execute@49.uvm_task_phase::execute@49.unnamed$$_0@54.uvm_run_phase::exec_task@54.lvc_ahb_master_monitor::run_phase@54.lvc_ahb_monitor::run_phase@54.lvc_ahb_monitor::run_phase@54.lvc_ahb_monitor::run_phase@96.lvc_ahb_monitor::monitor_transactions@96.lvc_ahb_monitor::collect_trasnfer@96.t.data}   }
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_watch { -disable {5}}
+gui_sim_watch { -file  $::env(PWD)/../vip_lib/lvc_ahb/lvc_ahb_monitor.sv  -line  46  }
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_wv_zoom_timerange -id  Wave.1 0 135863
+gui_marker_move -id  Wave.1 C1 44372
+gui_zoom -window Wave.1 -full
+gui_list_select -id Local.1 -selected  { {Sim:$prog.ahb_ram_tb@0.ahb_ram_tb@37.run_test@37.uvm_root::run_test@37.uvm_root::run_test@37.uvm_root::run_test@40.uvm_phase::m_run_phases@40.unnamed$$_1@40.unnamed$$_1@40.unnamed$$_1@47.uvm_phase::execute_phase@47.master_phase_process@47.master_phase_process@49.uvm_task_phase::execute@49.uvm_task_phase::execute@49.unnamed$$_0@54.uvm_run_phase::exec_task@54.lvc_ahb_master_monitor::run_phase@54.lvc_ahb_monitor::run_phase@54.lvc_ahb_monitor::run_phase@54.lvc_ahb_monitor::run_phase@96.lvc_ahb_monitor::monitor_transactions@96.t.data}   }
+gui_sim_continue  
+gui_list_select -id Wave.1 -selected  { {ahb_ram_tb.dut.HWDATA[31:0]}   }
+gui_list_select -id Wave.1 -selected  { {ahb_ram_tb.dut.HRDATA[31:0]}   }
+gui_list_select -id Wave.1 -selected  { {ahb_ram_tb.dut.HWDATA[31:0]}   }
+gui_list_select -id Wave.1 -selected  { {ahb_ram_tb.dut.HRDATA[31:0]}   }
+gui_list_select -id Wave.1 -selected  { {ahb_ram_tb.dut.HWDATA[31:0]}   }
+gui_sim_continue  
+gui_sim_continue  
+gui_list_expand -id  Local.1   {Sim:$prog.ahb_ram_tb@0.ahb_ram_tb@37.run_test@37.uvm_root::run_test@37.uvm_root::run_test@37.uvm_root::run_test@40.uvm_phase::m_run_phases@40.unnamed$$_1@40.unnamed$$_1@40.unnamed$$_1@47.uvm_phase::execute_phase@47.master_phase_process@47.master_phase_process@49.uvm_task_phase::execute@49.uvm_task_phase::execute@49.unnamed$$_0@54.uvm_run_phase::exec_task@54.lvc_ahb_master_monitor::run_phase@54.lvc_ahb_monitor::run_phase@54.lvc_ahb_monitor::run_phase@54.lvc_ahb_monitor::run_phase@96.lvc_ahb_monitor::monitor_transactions@96.lvc_ahb_monitor::collect_trasnfer@96_174_117.t}
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_marker_move -id  Wave.1 C1 67447
+gui_zoom -window Wave.1 -full
+gui_marker_move -id  Wave.1 C1 46301
+gui_list_select -id Wave.1 -selected  { ahb_ram_tb.dut.HRESETn   }
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_watch { -file  $::env(PWD)/../vip_lib/lvc_ahb/lvc_ahb_monitor.sv  -line  42  }
+gui_sim_continue  
+gui_list_expand -id  Local.1   {Sim:$prog.ahb_ram_tb@0.ahb_ram_tb@37.run_test@37.uvm_root::run_test@37.uvm_root::run_test@37.uvm_root::run_test@40.uvm_phase::m_run_phases@40.unnamed$$_1@40.unnamed$$_1@40.unnamed$$_1@47.uvm_phase::execute_phase@47.master_phase_process@47.master_phase_process@49.uvm_task_phase::execute@49.uvm_task_phase::execute@49.unnamed$$_0@54.uvm_run_phase::exec_task@54.lvc_ahb_master_monitor::run_phase@54.lvc_ahb_monitor::run_phase@54.lvc_ahb_monitor::run_phase@54.lvc_ahb_monitor::run_phase@96.lvc_ahb_monitor::monitor_transactions@96.lvc_ahb_monitor::collect_trasnfer@96_514_117.t}
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_list_select -id Wave.1 -selected  { {ahb_ram_tb.dut.HTRANS[1:0]}   }
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+restart
+gui_sim_restart
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_list_expand -id  Local.1   {Sim:$prog.ahb_ram_tb@0.ahb_ram_tb@37.run_test@37.uvm_root::run_test@37.uvm_root::run_test@37.uvm_root::run_test@40.uvm_phase::m_run_phases@40.unnamed$$_1@40.unnamed$$_1@40.unnamed$$_1@47.uvm_phase::execute_phase@47.master_phase_process@47.master_phase_process@49.uvm_task_phase::execute@49.uvm_task_phase::execute@49.unnamed$$_0@54.uvm_run_phase::exec_task@54.lvc_ahb_master_monitor::run_phase@54.lvc_ahb_monitor::run_phase@54.lvc_ahb_monitor::run_phase@54.lvc_ahb_monitor::run_phase@96.lvc_ahb_monitor::monitor_transactions@96.lvc_ahb_monitor::collect_trasnfer@96.t}
+gui_sim_continue  
+gui_sim_continue  
+gui_list_select -id Local.1 -selected  { {Sim:$prog.ahb_ram_tb@0.ahb_ram_tb@37.run_test@37.uvm_root::run_test@37.uvm_root::run_test@37.uvm_root::run_test@40.uvm_phase::m_run_phases@40.unnamed$$_1@40.unnamed$$_1@40.unnamed$$_1@47.uvm_phase::execute_phase@47.master_phase_process@47.master_phase_process@49.uvm_task_phase::execute@49.uvm_task_phase::execute@49.unnamed$$_0@54.uvm_run_phase::exec_task@54.lvc_ahb_master_monitor::run_phase@54.lvc_ahb_monitor::run_phase@54.lvc_ahb_monitor::run_phase@54.lvc_ahb_monitor::run_phase@96.lvc_ahb_monitor::monitor_transactions@96.lvc_ahb_monitor::collect_trasnfer@96.t.data}   }
+gui_list_expand -id  Local.1   {Sim:$prog.ahb_ram_tb@0.ahb_ram_tb@37.run_test@37.uvm_root::run_test@37.uvm_root::run_test@37.uvm_root::run_test@40.uvm_phase::m_run_phases@40.unnamed$$_1@40.unnamed$$_1@40.unnamed$$_1@47.uvm_phase::execute_phase@47.master_phase_process@47.master_phase_process@49.uvm_task_phase::execute@49.uvm_task_phase::execute@49.unnamed$$_0@54.uvm_run_phase::exec_task@54.lvc_ahb_master_monitor::run_phase@54.lvc_ahb_monitor::run_phase@54.lvc_ahb_monitor::run_phase@54.lvc_ahb_monitor::run_phase@96.lvc_ahb_monitor::monitor_transactions@96.lvc_ahb_monitor::collect_trasnfer@96.t.data}
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_watch { -file  $::env(PWD)/../vip_lib/lvc_ahb/lvc_ahb_monitor.sv  -line  48  }
+gui_sim_continue  
+gui_sim_continue  
+gui_marker_move -id  Wave.1 C1 82001
+gui_marker_move -id  Wave.1 C1 86001
+gui_marker_move -id  Wave.1 C1 90001
+gui_marker_move -id  Wave.1 C1 94001
+restart
+gui_sim_restart
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_list_expand -id  Local.1   {Sim:$prog.ahb_ram_tb@0.ahb_ram_tb@37.run_test@37.uvm_root::run_test@37.uvm_root::run_test@37.uvm_root::run_test@40.uvm_phase::m_run_phases@40.unnamed$$_1@40.unnamed$$_1@40.unnamed$$_1@47.uvm_phase::execute_phase@47.master_phase_process@47.master_phase_process@49.uvm_task_phase::execute@49.uvm_task_phase::execute@49.unnamed$$_0@54.uvm_run_phase::exec_task@54.lvc_ahb_master_monitor::run_phase@54.lvc_ahb_monitor::run_phase@54.lvc_ahb_monitor::run_phase@54.lvc_ahb_monitor::run_phase@96.lvc_ahb_monitor::monitor_transactions@96.lvc_ahb_monitor::collect_trasnfer@96.t}
+gui_sim_continue  
+gui_sim_continue  
+gui_list_expand -id  Local.1   {Sim:$prog.ahb_ram_tb@0.ahb_ram_tb@37.run_test@37.uvm_root::run_test@37.uvm_root::run_test@37.uvm_root::run_test@40.uvm_phase::m_run_phases@40.unnamed$$_1@40.unnamed$$_1@40.unnamed$$_1@47.uvm_phase::execute_phase@47.master_phase_process@47.master_phase_process@49.uvm_task_phase::execute@49.uvm_task_phase::execute@49.unnamed$$_0@54.uvm_run_phase::exec_task@54.lvc_ahb_master_monitor::run_phase@54.lvc_ahb_monitor::run_phase@54.lvc_ahb_monitor::run_phase@54.lvc_ahb_monitor::run_phase@96.lvc_ahb_monitor::monitor_transactions@96.lvc_ahb_monitor::collect_trasnfer@96.t.data}
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_watch { -file  $::env(PWD)/../vip_lib/lvc_ahb/lvc_ahb_monitor.sv  -line  51  }
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+restart
+gui_sim_restart
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_list_expand -id  Local.1   {Sim:$prog.ahb_ram_tb@0.ahb_ram_tb@37.run_test@37.uvm_root::run_test@37.uvm_root::run_test@37.uvm_root::run_test@40.uvm_phase::m_run_phases@40.unnamed$$_1@40.unnamed$$_1@40.unnamed$$_1@47.uvm_phase::execute_phase@47.master_phase_process@47.master_phase_process@49.uvm_task_phase::execute@49.uvm_task_phase::execute@49.unnamed$$_0@54.uvm_run_phase::exec_task@54.lvc_ahb_master_monitor::run_phase@54.lvc_ahb_monitor::run_phase@54.lvc_ahb_monitor::run_phase@54.lvc_ahb_monitor::run_phase@96.lvc_ahb_monitor::monitor_transactions@96.lvc_ahb_monitor::collect_trasnfer@96.t}
+gui_sim_continue  
+gui_list_expand -id  Local.1   {Sim:$prog.ahb_ram_tb@0.ahb_ram_tb@37.run_test@37.uvm_root::run_test@37.uvm_root::run_test@37.uvm_root::run_test@40.uvm_phase::m_run_phases@40.unnamed$$_1@40.unnamed$$_1@40.unnamed$$_1@47.uvm_phase::execute_phase@47.master_phase_process@47.master_phase_process@49.uvm_task_phase::execute@49.uvm_task_phase::execute@49.unnamed$$_0@54.uvm_run_phase::exec_task@54.lvc_ahb_master_monitor::run_phase@54.lvc_ahb_monitor::run_phase@54.lvc_ahb_monitor::run_phase@54.lvc_ahb_monitor::run_phase@96.lvc_ahb_monitor::monitor_transactions@96.lvc_ahb_monitor::collect_trasnfer@96.t.data}
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_watch { -disable {8}}
+gui_sim_watch { -disable {9}}
+gui_sim_continue  
+gui_list_expand -id  Local.1   {Sim:$prog.ahb_ram_tb@0.ahb_ram_tb@37.run_test@37.uvm_root::run_test@37.uvm_root::run_test@37.uvm_root::run_test@40.uvm_phase::m_run_phases@40.unnamed$$_1@40.unnamed$$_1@40.unnamed$$_1@47.uvm_phase::execute_phase@47.master_phase_process@47.master_phase_process@49.uvm_task_phase::execute@49.uvm_task_phase::execute@49.unnamed$$_0@54.uvm_run_phase::exec_task@54.lvc_ahb_master_monitor::run_phase@54.lvc_ahb_monitor::run_phase@54.lvc_ahb_monitor::run_phase@54.lvc_ahb_monitor::run_phase@96.lvc_ahb_monitor::monitor_transactions@96.lvc_ahb_monitor::collect_trasnfer@96_176_117.t}
+gui_sim_continue  
+gui_list_expand -id  Local.1   {Sim:$prog.ahb_ram_tb@0.ahb_ram_tb@37.run_test@37.uvm_root::run_test@37.uvm_root::run_test@37.uvm_root::run_test@40.uvm_phase::m_run_phases@40.unnamed$$_1@40.unnamed$$_1@40.unnamed$$_1@47.uvm_phase::execute_phase@47.master_phase_process@47.master_phase_process@49.uvm_task_phase::execute@49.uvm_task_phase::execute@49.unnamed$$_0@54.uvm_run_phase::exec_task@54.lvc_ahb_master_monitor::run_phase@54.lvc_ahb_monitor::run_phase@54.lvc_ahb_monitor::run_phase@54.lvc_ahb_monitor::run_phase@96.lvc_ahb_monitor::monitor_transactions@96.lvc_ahb_monitor::collect_trasnfer@96_176_117.t.data}
+gui_list_select -id Local.1 -selected  { {Sim:$prog.ahb_ram_tb@0.ahb_ram_tb@37.run_test@37.uvm_root::run_test@37.uvm_root::run_test@37.uvm_root::run_test@40.uvm_phase::m_run_phases@40.unnamed$$_1@40.unnamed$$_1@40.unnamed$$_1@47.uvm_phase::execute_phase@47.master_phase_process@47.master_phase_process@49.uvm_task_phase::execute@49.uvm_task_phase::execute@49.unnamed$$_0@54.uvm_run_phase::exec_task@54.lvc_ahb_master_monitor::run_phase@54.lvc_ahb_monitor::run_phase@54.lvc_ahb_monitor::run_phase@54.lvc_ahb_monitor::run_phase@96.lvc_ahb_monitor::monitor_transactions@96.lvc_ahb_monitor::collect_trasnfer@96_176_117.t.idle_xact_hwrite}   }
+gui_list_select -id Local.1 -selected  {  }
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_watch { -delete {5}}
+gui_sim_watch { -disable {4}}
+gui_sim_continue  
+gui_list_expand -id  Local.1   {Sim:$prog.ahb_ram_tb@0.ahb_ram_tb@37.run_test@37.uvm_root::run_test@37.uvm_root::run_test@37.uvm_root::run_test@40.uvm_phase::m_run_phases@40.unnamed$$_1@40.unnamed$$_1@40.unnamed$$_1@47.uvm_phase::execute_phase@47.master_phase_process@47.master_phase_process@49.uvm_task_phase::execute@49.uvm_task_phase::execute@49.unnamed$$_0@54.uvm_run_phase::exec_task@54.lvc_ahb_master_monitor::run_phase@54.lvc_ahb_monitor::run_phase@54.lvc_ahb_monitor::run_phase@54.lvc_ahb_monitor::run_phase@96.lvc_ahb_monitor::monitor_transactions@96.lvc_ahb_monitor::collect_trasnfer@96_348_117.t}
+gui_list_expand -id  Local.1   {Sim:$prog.ahb_ram_tb@0.ahb_ram_tb@37.run_test@37.uvm_root::run_test@37.uvm_root::run_test@37.uvm_root::run_test@40.uvm_phase::m_run_phases@40.unnamed$$_1@40.unnamed$$_1@40.unnamed$$_1@47.uvm_phase::execute_phase@47.master_phase_process@47.master_phase_process@49.uvm_task_phase::execute@49.uvm_task_phase::execute@49.unnamed$$_0@54.uvm_run_phase::exec_task@54.lvc_ahb_master_monitor::run_phase@54.lvc_ahb_monitor::run_phase@54.lvc_ahb_monitor::run_phase@54.lvc_ahb_monitor::run_phase@96.lvc_ahb_monitor::monitor_transactions@96.lvc_ahb_monitor::collect_trasnfer@96_348_117.t.data}
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_list_expand -id  Local.1   {Sim:$prog.ahb_ram_tb@0.ahb_ram_tb@37.run_test@37.uvm_root::run_test@37.uvm_root::run_test@37.uvm_root::run_test@40.uvm_phase::m_run_phases@40.unnamed$$_1@40.unnamed$$_1@40.unnamed$$_1@47.uvm_phase::execute_phase@47.master_phase_process@47.master_phase_process@49.uvm_task_phase::execute@49.uvm_task_phase::execute@49.unnamed$$_0@54.uvm_run_phase::exec_task@54.lvc_ahb_master_monitor::run_phase@54.lvc_ahb_monitor::run_phase@54.lvc_ahb_monitor::run_phase@54.lvc_ahb_monitor::run_phase@96.lvc_ahb_monitor::monitor_transactions@96.lvc_ahb_monitor::collect_trasnfer@96_520_117.t.data}
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+restart
+gui_sim_restart
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_watch { -file  $::env(PWD)/../vip_lib/lvc_ahb/lvc_ahb_monitor.sv  -line  41  }
+gui_sim_watch { -disable {10}}
+gui_sim_watch { -delete {10}}
+gui_sim_watch { -file  $::env(PWD)/../vip_lib/lvc_ahb/lvc_ahb_monitor.sv  -line  41  }
+gui_sim_continue  
+gui_show_window -window  Stack.1
+gui_show_window -window  Local.1
+gui_list_expand -id  Local.1   {Sim:$prog.ahb_ram_tb@0.ahb_ram_tb@37.run_test@37.uvm_root::run_test@37.uvm_root::run_test@37.uvm_root::run_test@40.uvm_phase::m_run_phases@40.unnamed$$_1@40.unnamed$$_1@40.unnamed$$_1@47.uvm_phase::execute_phase@47.master_phase_process@47.master_phase_process@49.uvm_task_phase::execute@49.uvm_task_phase::execute@49.unnamed$$_0@54.uvm_run_phase::exec_task@54.lvc_ahb_master_monitor::run_phase@54.lvc_ahb_monitor::run_phase@54.lvc_ahb_monitor::run_phase@54.lvc_ahb_monitor::run_phase@96.lvc_ahb_monitor::monitor_transactions@96.lvc_ahb_monitor::collect_trasnfer@96.t}
+gui_sim_continue  
+gui_sim_watch { -disable {11}}
+gui_sim_continue  
+gui_sim_continue  
+gui_list_expand -id  Local.1   {Sim:$prog.ahb_ram_tb@0.ahb_ram_tb@37.run_test@37.uvm_root::run_test@37.uvm_root::run_test@37.uvm_root::run_test@40.uvm_phase::m_run_phases@40.unnamed$$_1@40.unnamed$$_1@40.unnamed$$_1@47.uvm_phase::execute_phase@47.master_phase_process@47.master_phase_process@49.uvm_task_phase::execute@49.uvm_task_phase::execute@49.unnamed$$_0@54.uvm_run_phase::exec_task@54.lvc_ahb_master_monitor::run_phase@54.lvc_ahb_monitor::run_phase@54.lvc_ahb_monitor::run_phase@54.lvc_ahb_monitor::run_phase@96.lvc_ahb_monitor::monitor_transactions@96.lvc_ahb_monitor::collect_trasnfer@96.t.data}
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_list_expand -id  Local.1   {Sim:$prog.ahb_ram_tb@0.ahb_ram_tb@37.run_test@37.uvm_root::run_test@37.uvm_root::run_test@37.uvm_root::run_test@40.uvm_phase::m_run_phases@40.unnamed$$_1@40.unnamed$$_1@40.unnamed$$_1@47.uvm_phase::execute_phase@47.master_phase_process@47.master_phase_process@49.uvm_task_phase::execute@49.uvm_task_phase::execute@49.unnamed$$_0@54.uvm_run_phase::exec_task@54.lvc_ahb_master_monitor::run_phase@54.lvc_ahb_monitor::run_phase@54.lvc_ahb_monitor::run_phase@54.lvc_ahb_monitor::run_phase@96.lvc_ahb_monitor::monitor_transactions@96.lvc_ahb_monitor::collect_trasnfer@96_176_117.t.data}
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_watch { -disable {9}}
+gui_sim_continue  
+gui_list_expand -id  Local.1   {Sim:$prog.ahb_ram_tb@0.ahb_ram_tb@37.run_test@37.uvm_root::run_test@37.uvm_root::run_test@37.uvm_root::run_test@40.uvm_phase::m_run_phases@40.unnamed$$_1@40.unnamed$$_1@40.unnamed$$_1@47.uvm_phase::execute_phase@47.master_phase_process@47.master_phase_process@49.uvm_task_phase::execute@49.uvm_task_phase::execute@49.unnamed$$_0@54.uvm_run_phase::exec_task@54.lvc_ahb_master_monitor::run_phase@54.lvc_ahb_monitor::run_phase@54.lvc_ahb_monitor::run_phase@54.lvc_ahb_monitor::run_phase@96.lvc_ahb_monitor::monitor_transactions@96.lvc_ahb_monitor::collect_trasnfer@96_348_117.t.data}
+gui_sim_continue  
+gui_sim_watch { -disable {5}}
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_watch { -delete {5}}
+gui_sim_watch { -delete {9}}
+gui_sim_watch { -file  $::env(PWD)/../vip_lib/lvc_ahb/lvc_ahb_monitor.sv  -line  49  }
+gui_sim_continue  
+restart
+gui_sim_restart
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_show_window -window  Stack.1
+gui_show_window -window  Local.1
+gui_list_expand -id  Local.1   {Sim:$prog.ahb_ram_tb@0.ahb_ram_tb@37.run_test@37.uvm_root::run_test@37.uvm_root::run_test@37.uvm_root::run_test@40.uvm_phase::m_run_phases@40.unnamed$$_1@40.unnamed$$_1@40.unnamed$$_1@47.uvm_phase::execute_phase@47.master_phase_process@47.master_phase_process@49.uvm_task_phase::execute@49.uvm_task_phase::execute@49.unnamed$$_0@54.uvm_run_phase::exec_task@54.lvc_ahb_master_monitor::run_phase@54.lvc_ahb_monitor::run_phase@54.lvc_ahb_monitor::run_phase@54.lvc_ahb_monitor::run_phase@96.lvc_ahb_monitor::monitor_transactions@96.lvc_ahb_monitor::collect_trasnfer@96.t}
+gui_list_expand -id  Local.1   {Sim:$prog.ahb_ram_tb@0.ahb_ram_tb@37.run_test@37.uvm_root::run_test@37.uvm_root::run_test@37.uvm_root::run_test@40.uvm_phase::m_run_phases@40.unnamed$$_1@40.unnamed$$_1@40.unnamed$$_1@47.uvm_phase::execute_phase@47.master_phase_process@47.master_phase_process@49.uvm_task_phase::execute@49.uvm_task_phase::execute@49.unnamed$$_0@54.uvm_run_phase::exec_task@54.lvc_ahb_master_monitor::run_phase@54.lvc_ahb_monitor::run_phase@54.lvc_ahb_monitor::run_phase@54.lvc_ahb_monitor::run_phase@96.lvc_ahb_monitor::monitor_transactions@96.lvc_ahb_monitor::collect_trasnfer@96.t.data}
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_watch { -file  $::env(PWD)/../vip_lib/lvc_ahb/lvc_ahb_monitor.sv  -line  48  }
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_list_expand -id  Local.1   {Sim:$prog.ahb_ram_tb@0.ahb_ram_tb@37.run_test@37.uvm_root::run_test@37.uvm_root::run_test@37.uvm_root::run_test@40.uvm_phase::m_run_phases@40.unnamed$$_1@40.unnamed$$_1@40.unnamed$$_1@47.uvm_phase::execute_phase@47.master_phase_process@47.master_phase_process@49.uvm_task_phase::execute@49.uvm_task_phase::execute@49.unnamed$$_0@54.uvm_run_phase::exec_task@54.lvc_ahb_master_monitor::run_phase@54.lvc_ahb_monitor::run_phase@54.lvc_ahb_monitor::run_phase@54.lvc_ahb_monitor::run_phase@96.lvc_ahb_monitor::monitor_transactions@96.lvc_ahb_monitor::collect_trasnfer@96_348_117.t.data}
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_list_expand -id  Local.1   {Sim:$prog.ahb_ram_tb@0.ahb_ram_tb@37.run_test@37.uvm_root::run_test@37.uvm_root::run_test@37.uvm_root::run_test@40.uvm_phase::m_run_phases@40.unnamed$$_1@40.unnamed$$_1@40.unnamed$$_1@47.uvm_phase::execute_phase@47.master_phase_process@47.master_phase_process@49.uvm_task_phase::execute@49.uvm_task_phase::execute@49.unnamed$$_0@54.uvm_run_phase::exec_task@54.lvc_ahb_master_monitor::run_phase@54.lvc_ahb_monitor::run_phase@54.lvc_ahb_monitor::run_phase@54.lvc_ahb_monitor::run_phase@96.lvc_ahb_monitor::monitor_transactions@96.lvc_ahb_monitor::collect_trasnfer@96_520_117.t.data}
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+restart
+gui_sim_restart
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_list_select -id Wave.1 -selected  { ahb_ram_tb.dut.HREADY   }
+gui_sim_watch { -delete {6}}
+gui_sim_watch { -file  $::env(PWD)/../vip_lib/lvc_ahb/lvc_ahb_monitor.sv  -line  46  }
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_show_window -window  Stack.1
+gui_show_window -window  Local.1
+gui_list_expand -id  Local.1   {Sim:$prog.ahb_ram_tb@0.ahb_ram_tb@37.run_test@37.uvm_root::run_test@37.uvm_root::run_test@37.uvm_root::run_test@40.uvm_phase::m_run_phases@40.unnamed$$_1@40.unnamed$$_1@40.unnamed$$_1@47.uvm_phase::execute_phase@47.master_phase_process@47.master_phase_process@49.uvm_task_phase::execute@49.uvm_task_phase::execute@49.unnamed$$_0@54.uvm_run_phase::exec_task@54.lvc_ahb_master_monitor::run_phase@54.lvc_ahb_monitor::run_phase@54.lvc_ahb_monitor::run_phase@54.lvc_ahb_monitor::run_phase@96.lvc_ahb_monitor::monitor_transactions@96.lvc_ahb_monitor::collect_trasnfer@96_176_117.t}
+gui_sim_continue  
+gui_list_expand -id  Local.1   {Sim:$prog.ahb_ram_tb@0.ahb_ram_tb@37.run_test@37.uvm_root::run_test@37.uvm_root::run_test@37.uvm_root::run_test@40.uvm_phase::m_run_phases@40.unnamed$$_1@40.unnamed$$_1@40.unnamed$$_1@47.uvm_phase::execute_phase@47.master_phase_process@47.master_phase_process@49.uvm_task_phase::execute@49.uvm_task_phase::execute@49.unnamed$$_0@54.uvm_run_phase::exec_task@54.lvc_ahb_master_monitor::run_phase@54.lvc_ahb_monitor::run_phase@54.lvc_ahb_monitor::run_phase@54.lvc_ahb_monitor::run_phase@96.lvc_ahb_monitor::monitor_transactions@96.lvc_ahb_monitor::collect_trasnfer@96_176_117.t.data}
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_list_expand -id  Local.1   {Sim:$prog.ahb_ram_tb@0.ahb_ram_tb@37.run_test@37.uvm_root::run_test@37.uvm_root::run_test@37.uvm_root::run_test@40.uvm_phase::m_run_phases@40.unnamed$$_1@40.unnamed$$_1@40.unnamed$$_1@47.uvm_phase::execute_phase@47.master_phase_process@47.master_phase_process@49.uvm_task_phase::execute@49.uvm_task_phase::execute@49.unnamed$$_0@54.uvm_run_phase::exec_task@54.lvc_ahb_master_monitor::run_phase@54.lvc_ahb_monitor::run_phase@54.lvc_ahb_monitor::run_phase@54.lvc_ahb_monitor::run_phase@96.lvc_ahb_monitor::monitor_transactions@96.lvc_ahb_monitor::collect_trasnfer@96_348_117.t.data}
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_src_highlight_item -id Source.1 -lfrom 57 -idxfrom 4 -fileIdFrom 0 -lto 57 -idxto 53 -fileIdTo 0 -selection {t.xact_type = xact_type_enum'(vif.cb_mon.hwrite);} -selectionId 0 -replace 0
+restart
+gui_sim_restart
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_show_window -window  Stack.1
+gui_show_window -window  Local.1
+gui_list_expand -id  Local.1   {Sim:$prog.ahb_ram_tb@0.ahb_ram_tb@37.run_test@37.uvm_root::run_test@37.uvm_root::run_test@37.uvm_root::run_test@40.uvm_phase::m_run_phases@40.unnamed$$_1@40.unnamed$$_1@40.unnamed$$_1@47.uvm_phase::execute_phase@47.master_phase_process@47.master_phase_process@49.uvm_task_phase::execute@49.uvm_task_phase::execute@49.unnamed$$_0@54.uvm_run_phase::exec_task@54.lvc_ahb_master_monitor::run_phase@54.lvc_ahb_monitor::run_phase@54.lvc_ahb_monitor::run_phase@54.lvc_ahb_monitor::run_phase@96.lvc_ahb_monitor::monitor_transactions@96.lvc_ahb_monitor::collect_trasnfer@96.t}
+gui_sim_continue  
+gui_list_expand -id  Local.1   {Sim:$prog.ahb_ram_tb@0.ahb_ram_tb@37.run_test@37.uvm_root::run_test@37.uvm_root::run_test@37.uvm_root::run_test@40.uvm_phase::m_run_phases@40.unnamed$$_1@40.unnamed$$_1@40.unnamed$$_1@47.uvm_phase::execute_phase@47.master_phase_process@47.master_phase_process@49.uvm_task_phase::execute@49.uvm_task_phase::execute@49.unnamed$$_0@54.uvm_run_phase::exec_task@54.lvc_ahb_master_monitor::run_phase@54.lvc_ahb_monitor::run_phase@54.lvc_ahb_monitor::run_phase@54.lvc_ahb_monitor::run_phase@96.lvc_ahb_monitor::monitor_transactions@96.lvc_ahb_monitor::collect_trasnfer@96.t.data}
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_list_expand -id  Local.1   {Sim:$prog.ahb_ram_tb@0.ahb_ram_tb@37.run_test@37.uvm_root::run_test@37.uvm_root::run_test@37.uvm_root::run_test@40.uvm_phase::m_run_phases@40.unnamed$$_1@40.unnamed$$_1@40.unnamed$$_1@47.uvm_phase::execute_phase@47.master_phase_process@47.master_phase_process@49.uvm_task_phase::execute@49.uvm_task_phase::execute@49.unnamed$$_0@54.uvm_run_phase::exec_task@54.lvc_ahb_master_monitor::run_phase@54.lvc_ahb_monitor::run_phase@54.lvc_ahb_monitor::run_phase@54.lvc_ahb_monitor::run_phase@96.lvc_ahb_monitor::monitor_transactions@96.lvc_ahb_monitor::collect_trasnfer@96_176_117.t.data}
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_list_expand -id  Local.1   {Sim:$prog.ahb_ram_tb@0.ahb_ram_tb@37.run_test@37.uvm_root::run_test@37.uvm_root::run_test@37.uvm_root::run_test@40.uvm_phase::m_run_phases@40.unnamed$$_1@40.unnamed$$_1@40.unnamed$$_1@47.uvm_phase::execute_phase@47.master_phase_process@47.master_phase_process@49.uvm_task_phase::execute@49.uvm_task_phase::execute@49.unnamed$$_0@54.uvm_run_phase::exec_task@54.lvc_ahb_master_monitor::run_phase@54.lvc_ahb_monitor::run_phase@54.lvc_ahb_monitor::run_phase@54.lvc_ahb_monitor::run_phase@96.lvc_ahb_monitor::monitor_transactions@96.lvc_ahb_monitor::collect_trasnfer@96_348_117.t.data}
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_list_expand -id  Local.1   {Sim:$prog.ahb_ram_tb@0.ahb_ram_tb@37.run_test@37.uvm_root::run_test@37.uvm_root::run_test@37.uvm_root::run_test@40.uvm_phase::m_run_phases@40.unnamed$$_1@40.unnamed$$_1@40.unnamed$$_1@47.uvm_phase::execute_phase@47.master_phase_process@47.master_phase_process@49.uvm_task_phase::execute@49.uvm_task_phase::execute@49.unnamed$$_0@54.uvm_run_phase::exec_task@54.lvc_ahb_master_monitor::run_phase@54.lvc_ahb_monitor::run_phase@54.lvc_ahb_monitor::run_phase@54.lvc_ahb_monitor::run_phase@96.lvc_ahb_monitor::monitor_transactions@96.lvc_ahb_monitor::collect_trasnfer@96_520_117.t.data}
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_watch { -disable {3}}
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_list_expand -id  Local.1   {Sim:$prog.ahb_ram_tb@0.ahb_ram_tb@37.run_test@37.uvm_root::run_test@37.uvm_root::run_test@37.uvm_root::run_test@40.uvm_phase::m_run_phases@40.unnamed$$_1@40.unnamed$$_1@40.unnamed$$_1@47.uvm_phase::execute_phase@47.master_phase_process@47.master_phase_process@49.uvm_task_phase::execute@49.uvm_task_phase::execute@49.unnamed$$_0@54.uvm_run_phase::exec_task@54.lvc_ahb_master_monitor::run_phase@54.lvc_ahb_monitor::run_phase@54.lvc_ahb_monitor::run_phase@54.lvc_ahb_monitor::run_phase@96.lvc_ahb_monitor::monitor_transactions@96.lvc_ahb_monitor::collect_trasnfer@96_692_117.t.data}
+gui_sim_continue  
+gui_sim_watch { -file  $::env(PWD)/../vip_lib/lvc_ahb/lvc_ahb_monitor.sv  -line  59  }
+gui_sim_watch { -disable {11}}
+gui_sim_watch { -delete {11}}
+gui_sim_watch { -file  $::env(PWD)/../vip_lib/lvc_ahb/lvc_ahb_monitor.sv  -line  59  }
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_list_expand -id  Local.1   {Sim:$prog.ahb_ram_tb@0.ahb_ram_tb@37.run_test@37.uvm_root::run_test@37.uvm_root::run_test@37.uvm_root::run_test@40.uvm_phase::m_run_phases@40.unnamed$$_1@40.unnamed$$_1@40.unnamed$$_1@47.uvm_phase::execute_phase@47.master_phase_process@47.master_phase_process@49.uvm_task_phase::execute@49.uvm_task_phase::execute@49.unnamed$$_0@54.uvm_run_phase::exec_task@54.lvc_ahb_master_monitor::run_phase@54.lvc_ahb_monitor::run_phase@54.lvc_ahb_monitor::run_phase@54.lvc_ahb_monitor::run_phase@96.lvc_ahb_monitor::monitor_transactions@96.lvc_ahb_monitor::collect_trasnfer@96_864_117.lvc_ahb_monitor::valid_data@96.t.data}
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_list_expand -id  Local.1   {Sim:$prog.ahb_ram_tb@0.ahb_ram_tb@37.run_test@37.uvm_root::run_test@37.uvm_root::run_test@37.uvm_root::run_test@40.uvm_phase::m_run_phases@40.unnamed$$_1@40.unnamed$$_1@40.unnamed$$_1@47.uvm_phase::execute_phase@47.master_phase_process@47.master_phase_process@49.uvm_task_phase::execute@49.uvm_task_phase::execute@49.unnamed$$_0@54.uvm_run_phase::exec_task@54.lvc_ahb_master_monitor::run_phase@54.lvc_ahb_monitor::run_phase@54.lvc_ahb_monitor::run_phase@54.lvc_ahb_monitor::run_phase@96.lvc_ahb_monitor::monitor_transactions@96.lvc_ahb_monitor::collect_trasnfer@96_1036_117.lvc_ahb_monitor::valid_data@96.t.data}
+gui_sim_continue  
+restart
+gui_sim_restart
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_show_window -window  Stack.1
+gui_show_window -window  Local.1
+gui_sim_watch { -disable {11}}
+gui_list_expand -id  Local.1   {Sim:$prog.ahb_ram_tb@0.ahb_ram_tb@37.run_test@37.uvm_root::run_test@37.uvm_root::run_test@37.uvm_root::run_test@40.uvm_phase::m_run_phases@40.unnamed$$_1@40.unnamed$$_1@40.unnamed$$_1@47.uvm_phase::execute_phase@47.master_phase_process@47.master_phase_process@49.uvm_task_phase::execute@49.uvm_task_phase::execute@49.unnamed$$_0@54.uvm_run_phase::exec_task@54.lvc_ahb_master_monitor::run_phase@54.lvc_ahb_monitor::run_phase@54.lvc_ahb_monitor::run_phase@54.lvc_ahb_monitor::run_phase@96.lvc_ahb_monitor::monitor_transactions@96.lvc_ahb_monitor::collect_trasnfer@96.lvc_ahb_monitor::valid_data@96.t}
+gui_list_expand -id  Local.1   {Sim:$prog.ahb_ram_tb@0.ahb_ram_tb@37.run_test@37.uvm_root::run_test@37.uvm_root::run_test@37.uvm_root::run_test@40.uvm_phase::m_run_phases@40.unnamed$$_1@40.unnamed$$_1@40.unnamed$$_1@47.uvm_phase::execute_phase@47.master_phase_process@47.master_phase_process@49.uvm_task_phase::execute@49.uvm_task_phase::execute@49.unnamed$$_0@54.uvm_run_phase::exec_task@54.lvc_ahb_master_monitor::run_phase@54.lvc_ahb_monitor::run_phase@54.lvc_ahb_monitor::run_phase@54.lvc_ahb_monitor::run_phase@96.lvc_ahb_monitor::monitor_transactions@96.lvc_ahb_monitor::collect_trasnfer@96.lvc_ahb_monitor::valid_data@96.t.data}
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_watch { -disable {10}}
+gui_sim_continue  
+gui_sim_continue  
+gui_list_expand -id  Local.1   {Sim:$prog.ahb_ram_tb@0.ahb_ram_tb@37.run_test@37.uvm_root::run_test@37.uvm_root::run_test@37.uvm_root::run_test@40.uvm_phase::m_run_phases@40.unnamed$$_1@40.unnamed$$_1@40.unnamed$$_1@47.uvm_phase::execute_phase@47.master_phase_process@47.master_phase_process@49.uvm_task_phase::execute@49.uvm_task_phase::execute@49.unnamed$$_0@54.uvm_run_phase::exec_task@54.lvc_ahb_master_monitor::run_phase@54.lvc_ahb_monitor::run_phase@54.lvc_ahb_monitor::run_phase@54.lvc_ahb_monitor::run_phase@96.lvc_ahb_monitor::monitor_transactions@96.lvc_ahb_monitor::collect_trasnfer@96_176_117.t.data}
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_watch { -disable {9}}
+gui_sim_continue  
+gui_list_expand -id  Local.1   {Sim:$prog.ahb_ram_tb@0.ahb_ram_tb@37.run_test@37.uvm_root::run_test@37.uvm_root::run_test@37.uvm_root::run_test@40.uvm_phase::m_run_phases@40.unnamed$$_1@40.unnamed$$_1@40.unnamed$$_1@47.uvm_phase::execute_phase@47.master_phase_process@47.master_phase_process@49.uvm_task_phase::execute@49.uvm_task_phase::execute@49.unnamed$$_0@54.uvm_run_phase::exec_task@54.lvc_ahb_master_monitor::run_phase@54.lvc_ahb_monitor::run_phase@54.lvc_ahb_monitor::run_phase@54.lvc_ahb_monitor::run_phase@96.lvc_ahb_monitor::monitor_transactions@96.lvc_ahb_monitor::collect_trasnfer@96_348_117.t.data}
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_sim_continue  
+gui_close_window -window TopLevel.1

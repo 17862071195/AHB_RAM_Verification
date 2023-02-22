@@ -9,9 +9,18 @@ class ahb_ram_smoke_virt_seq extends ahb_ram_base_virtual_sequence;
   endfunction
 
   task body();
+    bit [31:0] addr, data;
     super.body();
     `uvm_info("body", "Entered ...", UVM_LOW)
-
+    for(int i=0; i<10; i++) begin
+      std::randomize(addr) with {addr[1:0] == 0; addr inside {['h1000:'hFFFF]};};
+      std::randomize(wr_val) with {wr_val == (i<<4) + i;};
+      data = wr_val;
+      `uvm_do_with(single_write, {addr == local::addr; data == local::data;})
+      `uvm_do_with(single_read, {addr == local::addr;})
+      rd_val = single_read.data;
+      compare_data(wr_val, rd_val);
+    end
     `uvm_info("body", "Exiting ...", UVM_LOW)
   endtask
 endclass

@@ -12,6 +12,7 @@ class ahb_ram_reg extends uvm_reg_block;
   function build();
     //TODO
     map = create_map("map", 'h0, 4, UVM_LITTLE_ENDIAN);
+    lock_model();
   endfunction
 endclass
 `endif // AHB_RAM_REG_SV

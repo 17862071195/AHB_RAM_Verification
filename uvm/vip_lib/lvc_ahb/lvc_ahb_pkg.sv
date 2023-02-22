@@ -18,6 +18,7 @@ package lvc_ahb_pkg;
   `include "lvc_ahb_master_monitor.sv"
   `include "lvc_ahb_master_driver.sv"
   `include "lvc_ahb_master_agent.sv"
+  `include "lvc_ahb_sequence_lib.svh"
   
 endpackage
 

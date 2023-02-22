@@ -3,8 +3,6 @@
 
 class lvc_ahb_master_monitor extends lvc_ahb_monitor;
 
-  virtual lvc_ahb_if vif;
-
   `uvm_component_utils(lvc_ahb_master_monitor)
 
   function new(string name = "lvc_ahb_master_monitor", uvm_component parent = null);

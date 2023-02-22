@@ -19,6 +19,10 @@ class ahb_ram_base_test extends uvm_test;
     uvm_config_db#(ahb_ram_reg)::set(this,"env","rgm", rgm);
     cfg = ahb_ram_config::type_id::create("cfg");
     cfg.rgm = rgm;
+    // config parameter of scorenoard
+    cfg.addr_start = 32'h0;
+    cfg.addr_end = 32'h0000_FFFF;
+    
     if(!uvm_config_db#(virtual ahb_ram_if)::get(this,"","vif",cfg.vif)) begin
       `uvm_fatal("GETVIF", "base_test cannot get vif from config DB")
     end

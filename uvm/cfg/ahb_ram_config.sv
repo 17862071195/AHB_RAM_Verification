@@ -4,6 +4,15 @@
 class ahb_ram_config extends uvm_object;
   int seq_check_count;
   int seq_check_error;
+  int scb_check_count;
+  int scb_check_error;
+  
+  bit enable_cov = 1;
+  bit enable_scb = 1;
+
+  bit [31:0] addr_start; 
+  bit [31:0] addr_end;
+  int data_width;
   `uvm_object_utils(ahb_ram_config)
 
   lvc_ahb_agent_configuration ahb_cfg;

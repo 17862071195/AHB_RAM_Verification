@@ -1,2 +1,2 @@
-sid ahb_ram_tb
+sid ahb_blockram_32
 bcid 0 0 WIDTH,1 CALL_ARG_VAL,2,0 CALL_ARG_VAL,3,0 AND WIDTH,4 CALL_ARG_VAL,4,0 OPT_CONST,0 WIDTH,1 M_NEQU OR RET

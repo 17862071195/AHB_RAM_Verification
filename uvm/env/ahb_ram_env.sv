@@ -54,9 +54,23 @@ class ahb_ram_env extends uvm_env;
 
     ahb_mst.monitor.item_observed_port.connect(cov.ahb_trans_observed_imp);
     ahb_mst.monitor.item_observed_port.connect(scb.ahb_trans_observed_imp);
+  endfunction
 
+  function void end_of_elaboration_phase(uvm_phase phase);
+    super.end_of_elaboration_phase(phase);
+  endfunction
 
-
+  function void report_phase(uvm_phase phase);
+    string reports = "\n";
+    super.report_phase(phase);
+    reports = {reports, $sformatf("=============================================== \n")};
+    reports = {reports, $sformatf("CURRENT TEST SUMMARY \n")};
+    reports = {reports, $sformatf("SEQUENCE CHECK COUNT : %0d \n", cfg.seq_check_count)};
+    reports = {reports, $sformatf("SEQUENCE CHECK ERROR : %0d \n", cfg.seq_check_error)};
+    reports = {reports, $sformatf("SCOREBOARD CHECK COUNT : %0d \n", cfg.scb_check_count)};
+    reports = {reports, $sformatf("SCOREBOARD CHECK ERROR : %0d \n", cfg.scb_check_error)};
+    reports = {reports, $sformatf("=============================================== \n")};
+    `uvm_info("TEST_SUMMARY", reports, UVM_LOW)
   endfunction
 
 endclass

@@ -5,8 +5,8 @@ Warning-[RT_SMLWITHGUI] Smartlog with -gui
 
 Chronologic VCS simulator copyright 1991-2018
 Contains Synopsys proprietary information.
-Compiler version O-2018.09-SP2_Full64; Runtime version O-2018.09-SP2_Full64;  Feb  8 20:33 2023
-NOTE: automatic random seed used: 891629649
+Compiler version O-2018.09-SP2_Full64; Runtime version O-2018.09-SP2_Full64;  Feb 20 22:21 2023
+NOTE: automatic random seed used: 950566213
 UVM_INFO /opt/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.2/base/uvm_root.svh(402) @ 0: reporter [UVM/RELNOTES] 
 ----------------------------------------------------------------
 UVM-1.2.Synopsys
@@ -33,43 +33,993 @@ VCD+ Writer O-2018.09-SP2_Full64 Copyright (c) 1991-2018 by Synopsys Inc.
 The design has assertions or cover properties.
 The assertion browser can be used to view them. Click on the assertion toolbar button or use the menu 'Window->Panes->Assertion' to open it.
 The file '/home/verifier/DVT_Code/AHB_RAM/uvm/sim/inter.vpd' was opened successfully.
+GUI mode
 dve> run
+
+Stop point #1 @ 0 ps;  
 UVM_INFO @ 0: reporter [RNTST] Running test ahb_ram_smoke_test...
-UVM_INFO ../seq_lib/ahb_ram_base_virtual_sequence.sv(19) @ 0: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq [body] Entered ...
-UVM_INFO ../seq_lib/ahb_ram_base_virtual_sequence.sv(23) @ 0: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq [body] Exiting ...
-UVM_INFO ../seq_lib/ahb_ram_smoke_virt_seq.sv(13) @ 0: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq [body] Entered ...
-UVM_INFO ../seq_lib/ahb_ram_smoke_virt_seq.sv(15) @ 0: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq [body] Exiting ...
-UVM_INFO /opt/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.2/base/uvm_objection.svh(1276) @ 1000000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
-UVM_INFO /opt/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.2/base/uvm_report_catcher.svh(705) @ 1000000: reporter [UVM/REPORT/CATCHER] 
---- UVM Report catcher Summary ---
 
+Stop point #2 @ 0 ps;  
 
-Number of demoted UVM_FATAL reports  :    0
-Number of demoted UVM_ERROR reports  :    0
-Number of demoted UVM_WARNING reports:    0
-Number of caught UVM_FATAL reports   :    0
-Number of caught UVM_ERROR reports   :    0
-Number of caught UVM_WARNING reports :    0
+Stop point #4 @ 0 ps;  
 
-UVM_INFO /opt/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.2/base/uvm_report_server.svh(894) @ 1000000: reporter [UVM/REPORT/SERVER] 
---- UVM Report Summary ---
+Stop point #5 @ 0 ps;  
 
-** Report counts by severity
-UVM_INFO :    8
-UVM_WARNING :    0
-UVM_ERROR :    0
-UVM_FATAL :    0
-** Report counts by id
-[RNTST]     1
-[TEST_DONE]     1
-[UVM/RELNOTES]     1
-[UVM/REPORT/CATCHER]     1
-[body]     4
+Error: uninitialized virtual interface object
+  at time 0 in file ../vip_lib/lvc_ahb/./lvc_ahb_monitor.sv line 41
 
-$finish called from file "/opt/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.2/base/uvm_root.svh", line 527.
-$finish at simulation time              1000000
-Simulation complete, time is 1000000 ps.
-           V C S   S i m u l a t i o n   R e p o r t 
-Time: 1000000 ps
-CPU Time:      1.180 seconds;       Data structure size:   8.5Mb
-Wed Feb  8 22:47:25 2023
+#0 in \lvc_ahb_monitor::collect_trasnfer  at ../vip_lib/lvc_ahb/./lvc_ahb_monitor.sv:41
+#1 in \lvc_ahb_monitor::monitor_transactions  at ../vip_lib/lvc_ahb/./lvc_ahb_monitor.sv:33
+#2 in \lvc_ahb_monitor::run_phase  at ../vip_lib/lvc_ahb/./lvc_ahb_monitor.sv:26
+#3 in \lvc_ahb_master_monitor::run_phase  at ../vip_lib/lvc_ahb/./lvc_ahb_master_monitor.sv:23
+#4 in \uvm_run_phase::exec_task  at /opt/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.2/base/uvm_common_phases.svh:269
+#5 in \uvm_task_phase::execute  at /opt/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.2/base/uvm_task_phase.svh:152
+#6 in \uvm_phase::execute_phase  at /opt/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.2/base/uvm_phase.svh:1412
+#7 in \uvm_phase::m_run_phases  at /opt/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.2/base/uvm_phase.svh:2217
+#8 in \uvm_root::run_test  at /opt/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.2/base/uvm_root.svh:513
+Simulation complete, time is 0 ps.
+dve> restart
+Chronologic VCS simulator copyright 1991-2018
+Contains Synopsys proprietary information.
+Compiler version O-2018.09-SP2_Full64; Runtime version O-2018.09-SP2_Full64;  Feb 20 22:27 2023
+
+NOTE: automatic random seed used: 2825917776
+UVM_INFO /opt/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.2/base/uvm_root.svh(402) @ 0: reporter [UVM/RELNOTES] 
+----------------------------------------------------------------
+UVM-1.2.Synopsys
+(C) 2007-2014 Mentor Graphics Corporation
+(C) 2007-2014 Cadence Design Systems, Inc.
+(C) 2006-2014 Synopsys, Inc.
+(C) 2011-2013 Cypress Semiconductor Corp.
+(C) 2013-2014 NVIDIA Corporation
+----------------------------------------------------------------
+
+  ***********       IMPORTANT RELEASE NOTES         ************
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_NO_DEPRECATED undefined.
+  See http://www.eda.org/svdb/view.php?id=3313 for more details.
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_OBJECT_DO_NOT_NEED_CONSTRUCTOR undefined.
+  See http://www.eda.org/svdb/view.php?id=3770 for more details.
+
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+
+VCD+ Writer O-2018.09-SP2_Full64 Copyright (c) 1991-2018 by Synopsys Inc.
+The file '/home/verifier/DVT_Code/AHB_RAM/uvm/sim/inter.vpd' was opened successfully.
+GUI mode
+
+Stop point #1 @ 0 ps;  
+UVM_INFO @ 0: reporter [RNTST] Running test ahb_ram_smoke_test...
+
+Stop point #2 @ 0 ps;  
+
+Stop point #4 @ 0 ps;  
+
+Stop point #5 @ 0 ps;  
+
+Stop point #5 @ 2000 ps;  
+UVM_INFO ../seq_lib/ahb_ram_base_virtual_sequence.sv(23) @ 0: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq [body] Entered ...
+
+Stop point #5 @ 6000 ps;  
+
+Stop point #5 @ 10000 ps;  
+
+Stop point #9 @ 82000 ps;  
+UVM_INFO ../seq_lib/ahb_ram_base_virtual_sequence.sv(28) @ 78000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq [body] Exiting ...
+UVM_INFO ../seq_lib/ahb_ram_smoke_virt_seq.sv(14) @ 78000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq [body] Entered ...
+UVM_INFO ../seq_lib/elem_seqs/ahb_ram_single_write_seq.sv(20) @ 78000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq.single_write [body] Entered...
+
+Stop point #6 @ 86000 ps;  
+UVM_INFO ../seq_lib/elem_seqs/ahb_ram_single_write_seq.sv(27) @ 84000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq.single_write [body] Exiting...
+UVM_INFO ../seq_lib/elem_seqs/ahb_ram_single_read_seq.sv(20) @ 84000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq.single_read [body] Entered...
+
+Stop point #7 @ 86000 ps;  
+
+Stop point #3 @ 86000 ps;  
+
+Stop point #2 @ 86000 ps;  
+UVM_ERROR /opt/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.2/reg/uvm_reg_map.svh(1735) @ 86000: reporter [RegModel] Cannot get register by offset: Block rgm is not locked.
+
+Stop point #4 @ 86000 ps;  
+
+Stop point #9 @ 90000 ps;  
+
+Stop point #6 @ 94000 ps;  
+UVM_INFO ../seq_lib/elem_seqs/ahb_ram_single_read_seq.sv(26) @ 92000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq.single_read [body] Exiting...
+UVM_INFO ../seq_lib/ahb_ram_base_virtual_sequence.sv(34) @ 92000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq [COMPSUC] val1 'h0 === val2 'h0
+UVM_INFO ../seq_lib/elem_seqs/ahb_ram_single_write_seq.sv(20) @ 92000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq.single_write [body] Entered...
+
+Stop point #7 @ 94000 ps;  
+
+Stop point #3 @ 94000 ps;  
+
+Stop point #2 @ 94000 ps;  
+UVM_ERROR /opt/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.2/reg/uvm_reg_map.svh(1735) @ 94000: reporter [RegModel] Cannot get register by offset: Block rgm is not locked.
+
+Stop point #4 @ 94000 ps;  
+
+Stop point #9 @ 98000 ps;  
+
+Stop point #6 @ 102000 ps;  
+UVM_INFO ../seq_lib/elem_seqs/ahb_ram_single_write_seq.sv(27) @ 100000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq.single_write [body] Exiting...
+UVM_INFO ../seq_lib/elem_seqs/ahb_ram_single_read_seq.sv(20) @ 100000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq.single_read [body] Entered...
+
+Stop point #7 @ 102000 ps;  
+
+Stop point #3 @ 102000 ps;  
+
+Stop point #2 @ 102000 ps;  
+UVM_ERROR /opt/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.2/reg/uvm_reg_map.svh(1735) @ 102000: reporter [RegModel] Cannot get register by offset: Block rgm is not locked.
+
+Stop point #4 @ 102000 ps;  
+
+Stop point #10 @ 106000 ps;  
+
+Stop point #9 @ 106000 ps;  
+
+Stop point #6 @ 110000 ps;  
+UVM_INFO ../seq_lib/elem_seqs/ahb_ram_single_read_seq.sv(26) @ 108000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq.single_read [body] Exiting...
+UVM_INFO ../seq_lib/ahb_ram_base_virtual_sequence.sv(34) @ 108000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq [COMPSUC] val1 'h11 === val2 'h11
+UVM_INFO ../seq_lib/elem_seqs/ahb_ram_single_write_seq.sv(20) @ 108000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq.single_write [body] Entered...
+
+Stop point #7 @ 110000 ps;  
+
+Stop point #3 @ 110000 ps;  
+
+Stop point #2 @ 110000 ps;  
+UVM_ERROR /opt/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.2/reg/uvm_reg_map.svh(1735) @ 110000: reporter [RegModel] Cannot get register by offset: Block rgm is not locked.
+
+Stop point #4 @ 110000 ps;  
+
+Stop point #10 @ 114000 ps;  
+
+Stop point #9 @ 114000 ps;  
+
+Stop point #6 @ 118000 ps;  
+UVM_INFO ../seq_lib/elem_seqs/ahb_ram_single_write_seq.sv(27) @ 116000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq.single_write [body] Exiting...
+UVM_INFO ../seq_lib/elem_seqs/ahb_ram_single_read_seq.sv(20) @ 116000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq.single_read [body] Entered...
+
+Stop point #7 @ 118000 ps;  
+
+Stop point #3 @ 118000 ps;  
+
+Stop point #2 @ 118000 ps;  
+UVM_ERROR /opt/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.2/reg/uvm_reg_map.svh(1735) @ 118000: reporter [RegModel] Cannot get register by offset: Block rgm is not locked.
+
+Stop point #4 @ 118000 ps;  
+
+Stop point #10 @ 122000 ps;  
+
+Stop point #9 @ 122000 ps;  
+
+Stop point #6 @ 126000 ps;  
+UVM_INFO ../seq_lib/elem_seqs/ahb_ram_single_read_seq.sv(26) @ 124000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq.single_read [body] Exiting...
+UVM_INFO ../seq_lib/ahb_ram_base_virtual_sequence.sv(34) @ 124000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq [COMPSUC] val1 'h22 === val2 'h22
+UVM_INFO ../seq_lib/elem_seqs/ahb_ram_single_write_seq.sv(20) @ 124000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq.single_write [body] Entered...
+dve> restart
+Chronologic VCS simulator copyright 1991-2018
+Contains Synopsys proprietary information.
+Compiler version O-2018.09-SP2_Full64; Runtime version O-2018.09-SP2_Full64;  Feb 20 22:47 2023
+NOTE: automatic random seed used: 1370339872
+UVM_INFO /opt/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.2/base/uvm_root.svh(402) @ 0: reporter [UVM/RELNOTES] 
+----------------------------------------------------------------
+UVM-1.2.Synopsys
+(C) 2007-2014 Mentor Graphics Corporation
+(C) 2007-2014 Cadence Design Systems, Inc.
+(C) 2006-2014 Synopsys, Inc.
+(C) 2011-2013 Cypress Semiconductor Corp.
+(C) 2013-2014 NVIDIA Corporation
+----------------------------------------------------------------
+
+  ***********       IMPORTANT RELEASE NOTES         ************
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_NO_DEPRECATED undefined.
+  See http://www.eda.org/svdb/view.php?id=3313 for more details.
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_OBJECT_DO_NOT_NEED_CONSTRUCTOR undefined.
+  See http://www.eda.org/svdb/view.php?id=3770 for more details.
+
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+
+VCD+ Writer O-2018.09-SP2_Full64 Copyright (c) 1991-2018 by Synopsys Inc.
+The file '/home/verifier/DVT_Code/AHB_RAM/uvm/sim/inter.vpd' was opened successfully.
+GUI mode
+
+Stop point #1 @ 0 ps;  
+UVM_INFO @ 0: reporter [RNTST] Running test ahb_ram_smoke_test...
+
+Stop point #2 @ 0 ps;  
+
+Stop point #4 @ 0 ps;  
+
+Stop point #10 @ 82000 ps;  
+UVM_INFO ../seq_lib/ahb_ram_base_virtual_sequence.sv(23) @ 0: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq [body] Entered ...
+UVM_INFO ../seq_lib/ahb_ram_base_virtual_sequence.sv(28) @ 78000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq [body] Exiting ...
+UVM_INFO ../seq_lib/ahb_ram_smoke_virt_seq.sv(14) @ 78000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq [body] Entered ...
+UVM_INFO ../seq_lib/elem_seqs/ahb_ram_single_write_seq.sv(20) @ 78000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq.single_write [body] Entered...
+
+Stop point #9 @ 82000 ps;  
+
+Stop point #6 @ 86000 ps;  
+UVM_INFO ../seq_lib/elem_seqs/ahb_ram_single_write_seq.sv(27) @ 84000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq.single_write [body] Exiting...
+UVM_INFO ../seq_lib/elem_seqs/ahb_ram_single_read_seq.sv(20) @ 84000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq.single_read [body] Entered...
+
+Stop point #8 @ 86000 ps;  
+
+Stop point #6 @ 94000 ps;  
+UVM_INFO ../seq_lib/elem_seqs/ahb_ram_single_read_seq.sv(26) @ 92000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq.single_read [body] Exiting...
+UVM_INFO ../seq_lib/ahb_ram_base_virtual_sequence.sv(34) @ 92000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq [COMPSUC] val1 'h0 === val2 'h0
+UVM_INFO ../seq_lib/elem_seqs/ahb_ram_single_write_seq.sv(20) @ 92000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq.single_write [body] Entered...
+
+Stop point #8 @ 94000 ps;  
+
+Stop point #6 @ 102000 ps;  
+UVM_INFO ../seq_lib/elem_seqs/ahb_ram_single_write_seq.sv(27) @ 100000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq.single_write [body] Exiting...
+UVM_INFO ../seq_lib/elem_seqs/ahb_ram_single_read_seq.sv(20) @ 100000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq.single_read [body] Entered...
+
+Stop point #8 @ 102000 ps;  
+
+Stop point #6 @ 110000 ps;  
+UVM_INFO ../seq_lib/elem_seqs/ahb_ram_single_read_seq.sv(26) @ 108000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq.single_read [body] Exiting...
+UVM_INFO ../seq_lib/ahb_ram_base_virtual_sequence.sv(34) @ 108000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq [COMPSUC] val1 'h11 === val2 'h11
+UVM_INFO ../seq_lib/elem_seqs/ahb_ram_single_write_seq.sv(20) @ 108000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq.single_write [body] Entered...
+
+Stop point #8 @ 110000 ps;  
+
+Stop point #11 @ 114000 ps;  
+dve> restart
+Chronologic VCS simulator copyright 1991-2018
+Contains Synopsys proprietary information.
+Compiler version O-2018.09-SP2_Full64; Runtime version O-2018.09-SP2_Full64;  Feb 20 22:56 2023
+NOTE: automatic random seed used: 1467512583
+UVM_INFO /opt/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.2/base/uvm_root.svh(402) @ 0: reporter [UVM/RELNOTES] 
+----------------------------------------------------------------
+UVM-1.2.Synopsys
+(C) 2007-2014 Mentor Graphics Corporation
+(C) 2007-2014 Cadence Design Systems, Inc.
+(C) 2006-2014 Synopsys, Inc.
+(C) 2011-2013 Cypress Semiconductor Corp.
+(C) 2013-2014 NVIDIA Corporation
+----------------------------------------------------------------
+
+  ***********       IMPORTANT RELEASE NOTES         ************
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_NO_DEPRECATED undefined.
+  See http://www.eda.org/svdb/view.php?id=3313 for more details.
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_OBJECT_DO_NOT_NEED_CONSTRUCTOR undefined.
+  See http://www.eda.org/svdb/view.php?id=3770 for more details.
+
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+
+VCD+ Writer O-2018.09-SP2_Full64 Copyright (c) 1991-2018 by Synopsys Inc.
+The file '/home/verifier/DVT_Code/AHB_RAM/uvm/sim/inter.vpd' was opened successfully.
+GUI mode
+Error: [DVAP037] 
+Errors while sourcing the file '/home/verifier/DVT_Code/AHB_RAM/uvm/sim/.restartSimSession.tcl':
+
+ Line 91: Error-[UCLI-STOP-UNABLE-SET-STOP-POINT] Unable to set breakpoint
+  The setting of line breakpoint in file 
+  /home/verifier/DVT_Code/AHB_RAM/uvm/sim/../vip_lib/lvc_ahb/lvc_ahb_monitor.sv
+  line 52 due to 'stop' command was not successful. 
+  Please verify that the 'stop' command arguments are valid and that the 
+  statement/enclosing subprogram at file/line is complete and used in the 
+  design.  Also verify that the statement on which the BP is being added is in
+  a module compiled with line debug capability.  If the BP is being set inside
+  a TF, make sure the design is not compiled with '+vpi+1'.  Please recompile 
+  using the '-debug_access<+options>' switch and incremental options as 
+  required.  Recommended options are '-debug_access' for post-process debug, 
+  '-debug_access+class' for testbench debug, and '-debug_access+all' for all 
+  debug capabilities.  Refer the VCS user guide for more granular options for 
+  debug control under the switch '-debug_access' and refer to '-debug_region' 
+  for region control..
+
+Stop point #1 @ 0 ps;  
+UVM_INFO @ 0: reporter [RNTST] Running test ahb_ram_smoke_test...
+
+Stop point #2 @ 0 ps;  
+
+Stop point #4 @ 0 ps;  
+
+Stop point #9 @ 82000 ps;  
+UVM_INFO ../seq_lib/ahb_ram_base_virtual_sequence.sv(23) @ 0: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq [body] Entered ...
+UVM_INFO ../seq_lib/ahb_ram_base_virtual_sequence.sv(28) @ 78000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq [body] Exiting ...
+UVM_INFO ../seq_lib/ahb_ram_smoke_virt_seq.sv(14) @ 78000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq [body] Entered ...
+UVM_INFO ../seq_lib/elem_seqs/ahb_ram_single_write_seq.sv(20) @ 78000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq.single_write [body] Entered...
+
+Stop point #8 @ 82000 ps;  
+
+Stop point #10 @ 82000 ps;  
+
+Stop point #6 @ 86000 ps;  
+UVM_INFO ../seq_lib/elem_seqs/ahb_ram_single_write_seq.sv(27) @ 84000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq.single_write [body] Exiting...
+UVM_INFO ../seq_lib/elem_seqs/ahb_ram_single_read_seq.sv(20) @ 84000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq.single_read [body] Entered...
+
+Stop point #7 @ 90000 ps;  
+
+Stop point #10 @ 90000 ps;  
+
+Stop point #6 @ 94000 ps;  
+UVM_INFO ../seq_lib/elem_seqs/ahb_ram_single_read_seq.sv(26) @ 92000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq.single_read [body] Exiting...
+UVM_INFO ../seq_lib/ahb_ram_base_virtual_sequence.sv(34) @ 92000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq [COMPSUC] val1 'h0 === val2 'h0
+UVM_INFO ../seq_lib/elem_seqs/ahb_ram_single_write_seq.sv(20) @ 92000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq.single_write [body] Entered...
+
+Stop point #7 @ 98000 ps;  
+
+Stop point #10 @ 98000 ps;  
+
+Stop point #6 @ 102000 ps;  
+UVM_INFO ../seq_lib/elem_seqs/ahb_ram_single_write_seq.sv(27) @ 100000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq.single_write [body] Exiting...
+UVM_INFO ../seq_lib/elem_seqs/ahb_ram_single_read_seq.sv(20) @ 100000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq.single_read [body] Entered...
+
+Stop point #7 @ 106000 ps;  
+
+Stop point #10 @ 106000 ps;  
+
+Stop point #6 @ 110000 ps;  
+UVM_INFO ../seq_lib/elem_seqs/ahb_ram_single_read_seq.sv(26) @ 108000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq.single_read [body] Exiting...
+UVM_INFO ../seq_lib/ahb_ram_base_virtual_sequence.sv(34) @ 108000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq [COMPSUC] val1 'h11 === val2 'h11
+UVM_INFO ../seq_lib/elem_seqs/ahb_ram_single_write_seq.sv(20) @ 108000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq.single_write [body] Entered...
+
+Stop point #7 @ 114000 ps;  
+
+Stop point #10 @ 114000 ps;  
+
+Stop point #6 @ 118000 ps;  
+UVM_INFO ../seq_lib/elem_seqs/ahb_ram_single_write_seq.sv(27) @ 116000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq.single_write [body] Exiting...
+UVM_INFO ../seq_lib/elem_seqs/ahb_ram_single_read_seq.sv(20) @ 116000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq.single_read [body] Entered...
+
+Stop point #7 @ 122000 ps;  
+dve> restart
+Chronologic VCS simulator copyright 1991-2018
+Contains Synopsys proprietary information.
+Compiler version O-2018.09-SP2_Full64; Runtime version O-2018.09-SP2_Full64;  Feb 20 23:02 2023
+NOTE: automatic random seed used: 1067598038
+UVM_INFO /opt/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.2/base/uvm_root.svh(402) @ 0: reporter [UVM/RELNOTES] 
+----------------------------------------------------------------
+UVM-1.2.Synopsys
+(C) 2007-2014 Mentor Graphics Corporation
+(C) 2007-2014 Cadence Design Systems, Inc.
+(C) 2006-2014 Synopsys, Inc.
+(C) 2011-2013 Cypress Semiconductor Corp.
+(C) 2013-2014 NVIDIA Corporation
+----------------------------------------------------------------
+
+  ***********       IMPORTANT RELEASE NOTES         ************
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_NO_DEPRECATED undefined.
+  See http://www.eda.org/svdb/view.php?id=3313 for more details.
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_OBJECT_DO_NOT_NEED_CONSTRUCTOR undefined.
+  See http://www.eda.org/svdb/view.php?id=3770 for more details.
+
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+
+VCD+ Writer O-2018.09-SP2_Full64 Copyright (c) 1991-2018 by Synopsys Inc.
+The file '/home/verifier/DVT_Code/AHB_RAM/uvm/sim/inter.vpd' was opened successfully.
+GUI mode
+Error: [DVAP037] 
+Errors while sourcing the file '/home/verifier/DVT_Code/AHB_RAM/uvm/sim/.restartSimSession.tcl':
+
+ Line 94: Error-[UCLI-STOP-UNABLE-SET-STOP-POINT] Unable to set breakpoint
+  The setting of line breakpoint in file 
+  /home/verifier/DVT_Code/AHB_RAM/uvm/sim/../vip_lib/lvc_ahb/lvc_ahb_monitor.sv
+  line 51 due to 'stop' command was not successful. 
+  Please verify that the 'stop' command arguments are valid and that the 
+  statement/enclosing subprogram at file/line is complete and used in the 
+  design.  Also verify that the statement on which the BP is being added is in
+  a module compiled with line debug capability.  If the BP is being set inside
+  a TF, make sure the design is not compiled with '+vpi+1'.  Please recompile 
+  using the '-debug_access<+options>' switch and incremental options as 
+  required.  Recommended options are '-debug_access' for post-process debug, 
+  '-debug_access+class' for testbench debug, and '-debug_access+all' for all 
+  debug capabilities.  Refer the VCS user guide for more granular options for 
+  debug control under the switch '-debug_access' and refer to '-debug_region' 
+  for region control..
+
+Stop point #1 @ 0 ps;  
+UVM_INFO @ 0: reporter [RNTST] Running test ahb_ram_smoke_test...
+
+Stop point #2 @ 0 ps;  
+
+Stop point #4 @ 0 ps;  
+
+Stop point #9 @ 82000 ps;  
+UVM_INFO ../seq_lib/ahb_ram_base_virtual_sequence.sv(23) @ 0: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq [body] Entered ...
+UVM_INFO ../seq_lib/ahb_ram_base_virtual_sequence.sv(28) @ 78000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq [body] Exiting ...
+UVM_INFO ../seq_lib/ahb_ram_smoke_virt_seq.sv(14) @ 78000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq [body] Entered ...
+UVM_INFO ../seq_lib/elem_seqs/ahb_ram_single_write_seq.sv(20) @ 78000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq.single_write [body] Entered...
+
+Stop point #8 @ 82000 ps;  
+
+Stop point #10 @ 82000 ps;  
+
+Stop point #6 @ 86000 ps;  
+UVM_INFO ../seq_lib/elem_seqs/ahb_ram_single_write_seq.sv(27) @ 84000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq.single_write [body] Exiting...
+UVM_INFO ../seq_lib/elem_seqs/ahb_ram_single_read_seq.sv(20) @ 84000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq.single_read [body] Entered...
+
+Stop point #7 @ 86000 ps;  
+
+Stop point #3 @ 86000 ps;  
+
+Stop point #2 @ 86000 ps;  
+UVM_ERROR /opt/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.2/reg/uvm_reg_map.svh(1735) @ 86000: reporter [RegModel] Cannot get register by offset: Block rgm is not locked.
+
+Stop point #4 @ 86000 ps;  
+
+Stop point #9 @ 90000 ps;  
+
+Stop point #10 @ 90000 ps;  
+
+Stop point #6 @ 94000 ps;  
+UVM_INFO ../seq_lib/elem_seqs/ahb_ram_single_read_seq.sv(26) @ 92000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq.single_read [body] Exiting...
+UVM_INFO ../seq_lib/ahb_ram_base_virtual_sequence.sv(34) @ 92000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq [COMPSUC] val1 'h0 === val2 'h0
+UVM_INFO ../seq_lib/elem_seqs/ahb_ram_single_write_seq.sv(20) @ 92000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq.single_write [body] Entered...
+
+Stop point #7 @ 94000 ps;  
+
+Stop point #3 @ 94000 ps;  
+
+Stop point #2 @ 94000 ps;  
+UVM_ERROR /opt/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.2/reg/uvm_reg_map.svh(1735) @ 94000: reporter [RegModel] Cannot get register by offset: Block rgm is not locked.
+
+Stop point #4 @ 94000 ps;  
+
+Stop point #10 @ 98000 ps;  
+
+Stop point #6 @ 102000 ps;  
+UVM_INFO ../seq_lib/elem_seqs/ahb_ram_single_write_seq.sv(27) @ 100000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq.single_write [body] Exiting...
+UVM_INFO ../seq_lib/elem_seqs/ahb_ram_single_read_seq.sv(20) @ 100000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq.single_read [body] Entered...
+
+Stop point #7 @ 102000 ps;  
+
+Stop point #3 @ 102000 ps;  
+
+Stop point #2 @ 102000 ps;  
+UVM_ERROR /opt/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.2/reg/uvm_reg_map.svh(1735) @ 102000: reporter [RegModel] Cannot get register by offset: Block rgm is not locked.
+
+Stop point #10 @ 106000 ps;  
+
+Stop point #6 @ 110000 ps;  
+UVM_INFO ../seq_lib/elem_seqs/ahb_ram_single_read_seq.sv(26) @ 108000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq.single_read [body] Exiting...
+UVM_INFO ../seq_lib/ahb_ram_base_virtual_sequence.sv(34) @ 108000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq [COMPSUC] val1 'h11 === val2 'h11
+UVM_INFO ../seq_lib/elem_seqs/ahb_ram_single_write_seq.sv(20) @ 108000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq.single_write [body] Entered...
+
+Stop point #7 @ 110000 ps;  
+
+Stop point #3 @ 110000 ps;  
+
+Stop point #2 @ 110000 ps;  
+UVM_ERROR /opt/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.2/reg/uvm_reg_map.svh(1735) @ 110000: reporter [RegModel] Cannot get register by offset: Block rgm is not locked.
+
+Stop point #10 @ 114000 ps;  
+dve> restart
+Chronologic VCS simulator copyright 1991-2018
+Contains Synopsys proprietary information.
+Compiler version O-2018.09-SP2_Full64; Runtime version O-2018.09-SP2_Full64;  Feb 20 23:10 2023
+NOTE: automatic random seed used: 1997441718
+UVM_INFO /opt/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.2/base/uvm_root.svh(402) @ 0: reporter [UVM/RELNOTES] 
+----------------------------------------------------------------
+UVM-1.2.Synopsys
+(C) 2007-2014 Mentor Graphics Corporation
+(C) 2007-2014 Cadence Design Systems, Inc.
+(C) 2006-2014 Synopsys, Inc.
+(C) 2011-2013 Cypress Semiconductor Corp.
+(C) 2013-2014 NVIDIA Corporation
+----------------------------------------------------------------
+
+  ***********       IMPORTANT RELEASE NOTES         ************
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_NO_DEPRECATED undefined.
+  See http://www.eda.org/svdb/view.php?id=3313 for more details.
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_OBJECT_DO_NOT_NEED_CONSTRUCTOR undefined.
+  See http://www.eda.org/svdb/view.php?id=3770 for more details.
+
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+
+VCD+ Writer O-2018.09-SP2_Full64 Copyright (c) 1991-2018 by Synopsys Inc.
+The file '/home/verifier/DVT_Code/AHB_RAM/uvm/sim/inter.vpd' was opened successfully.
+GUI mode
+
+Stop point #1 @ 0 ps;  
+UVM_INFO @ 0: reporter [RNTST] Running test ahb_ram_smoke_test...
+
+Stop point #2 @ 0 ps;  
+
+Stop point #11 @ 0 ps;  
+
+Stop point #11 @ 2000 ps;  
+UVM_INFO ../seq_lib/ahb_ram_base_virtual_sequence.sv(23) @ 0: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq [body] Entered ...
+
+Stop point #9 @ 82000 ps;  
+UVM_INFO ../seq_lib/ahb_ram_base_virtual_sequence.sv(28) @ 78000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq [body] Exiting ...
+UVM_INFO ../seq_lib/ahb_ram_smoke_virt_seq.sv(14) @ 78000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq [body] Entered ...
+UVM_INFO ../seq_lib/elem_seqs/ahb_ram_single_write_seq.sv(20) @ 78000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq.single_write [body] Entered...
+
+Stop point #5 @ 86000 ps;  
+UVM_INFO ../seq_lib/elem_seqs/ahb_ram_single_write_seq.sv(27) @ 84000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq.single_write [body] Exiting...
+UVM_INFO ../seq_lib/elem_seqs/ahb_ram_single_read_seq.sv(20) @ 84000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq.single_read [body] Entered...
+
+Stop point #6 @ 86000 ps;  
+
+Stop point #3 @ 86000 ps;  
+
+Stop point #2 @ 86000 ps;  
+UVM_ERROR /opt/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.2/reg/uvm_reg_map.svh(1735) @ 86000: reporter [RegModel] Cannot get register by offset: Block rgm is not locked.
+
+Stop point #9 @ 90000 ps;  
+
+Stop point #5 @ 94000 ps;  
+UVM_INFO ../seq_lib/elem_seqs/ahb_ram_single_read_seq.sv(26) @ 92000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq.single_read [body] Exiting...
+UVM_INFO ../seq_lib/ahb_ram_base_virtual_sequence.sv(34) @ 92000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq [COMPSUC] val1 'h0 === val2 'h0
+UVM_INFO ../seq_lib/elem_seqs/ahb_ram_single_write_seq.sv(20) @ 92000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq.single_write [body] Entered...
+
+Stop point #6 @ 94000 ps;  
+
+Stop point #3 @ 94000 ps;  
+
+Stop point #2 @ 94000 ps;  
+UVM_ERROR /opt/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.2/reg/uvm_reg_map.svh(1735) @ 94000: reporter [RegModel] Cannot get register by offset: Block rgm is not locked.
+
+Stop point #9 @ 98000 ps;  
+
+Stop point #5 @ 102000 ps;  
+UVM_INFO ../seq_lib/elem_seqs/ahb_ram_single_write_seq.sv(27) @ 100000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq.single_write [body] Exiting...
+UVM_INFO ../seq_lib/elem_seqs/ahb_ram_single_read_seq.sv(20) @ 100000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq.single_read [body] Entered...
+
+Stop point #6 @ 102000 ps;  
+
+Stop point #3 @ 102000 ps;  
+
+Stop point #2 @ 102000 ps;  
+UVM_ERROR /opt/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.2/reg/uvm_reg_map.svh(1735) @ 102000: reporter [RegModel] Cannot get register by offset: Block rgm is not locked.
+
+Stop point #6 @ 110000 ps;  
+UVM_INFO ../seq_lib/elem_seqs/ahb_ram_single_read_seq.sv(26) @ 108000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq.single_read [body] Exiting...
+UVM_INFO ../seq_lib/ahb_ram_base_virtual_sequence.sv(34) @ 108000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq [COMPSUC] val1 'h11 === val2 'h11
+UVM_INFO ../seq_lib/elem_seqs/ahb_ram_single_write_seq.sv(20) @ 108000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq.single_write [body] Entered...
+
+Stop point #3 @ 110000 ps;  
+dve> restart
+Chronologic VCS simulator copyright 1991-2018
+Contains Synopsys proprietary information.
+Compiler version O-2018.09-SP2_Full64; Runtime version O-2018.09-SP2_Full64;  Feb 20 23:14 2023
+NOTE: automatic random seed used: 3645641357
+UVM_INFO /opt/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.2/base/uvm_root.svh(402) @ 0: reporter [UVM/RELNOTES] 
+----------------------------------------------------------------
+UVM-1.2.Synopsys
+(C) 2007-2014 Mentor Graphics Corporation
+(C) 2007-2014 Cadence Design Systems, Inc.
+(C) 2006-2014 Synopsys, Inc.
+(C) 2011-2013 Cypress Semiconductor Corp.
+(C) 2013-2014 NVIDIA Corporation
+----------------------------------------------------------------
+
+  ***********       IMPORTANT RELEASE NOTES         ************
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_NO_DEPRECATED undefined.
+  See http://www.eda.org/svdb/view.php?id=3313 for more details.
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_OBJECT_DO_NOT_NEED_CONSTRUCTOR undefined.
+  See http://www.eda.org/svdb/view.php?id=3770 for more details.
+
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+
+VCD+ Writer O-2018.09-SP2_Full64 Copyright (c) 1991-2018 by Synopsys Inc.
+The file '/home/verifier/DVT_Code/AHB_RAM/uvm/sim/inter.vpd' was opened successfully.
+GUI mode
+
+Stop point #1 @ 0 ps;  
+UVM_INFO @ 0: reporter [RNTST] Running test ahb_ram_smoke_test...
+
+Stop point #2 @ 0 ps;  
+
+Stop point #9 @ 86000 ps;  
+UVM_INFO ../seq_lib/ahb_ram_base_virtual_sequence.sv(23) @ 0: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq [body] Entered ...
+UVM_INFO ../seq_lib/ahb_ram_base_virtual_sequence.sv(28) @ 78000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq [body] Exiting ...
+UVM_INFO ../seq_lib/ahb_ram_smoke_virt_seq.sv(14) @ 78000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq [body] Entered ...
+UVM_INFO ../seq_lib/elem_seqs/ahb_ram_single_write_seq.sv(20) @ 78000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq.single_write [body] Entered...
+UVM_INFO ../seq_lib/elem_seqs/ahb_ram_single_write_seq.sv(27) @ 84000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq.single_write [body] Exiting...
+UVM_INFO ../seq_lib/elem_seqs/ahb_ram_single_read_seq.sv(20) @ 84000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq.single_read [body] Entered...
+
+Stop point #5 @ 86000 ps;  
+
+Stop point #3 @ 86000 ps;  
+
+Stop point #2 @ 86000 ps;  
+UVM_ERROR /opt/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.2/reg/uvm_reg_map.svh(1735) @ 86000: reporter [RegModel] Cannot get register by offset: Block rgm is not locked.
+
+Stop point #9 @ 94000 ps;  
+UVM_INFO ../seq_lib/elem_seqs/ahb_ram_single_read_seq.sv(26) @ 92000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq.single_read [body] Exiting...
+UVM_INFO ../seq_lib/ahb_ram_base_virtual_sequence.sv(34) @ 92000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq [COMPSUC] val1 'h0 === val2 'h0
+UVM_INFO ../seq_lib/elem_seqs/ahb_ram_single_write_seq.sv(20) @ 92000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq.single_write [body] Entered...
+
+Stop point #5 @ 94000 ps;  
+
+Stop point #3 @ 94000 ps;  
+
+Stop point #2 @ 94000 ps;  
+UVM_ERROR /opt/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.2/reg/uvm_reg_map.svh(1735) @ 94000: reporter [RegModel] Cannot get register by offset: Block rgm is not locked.
+
+Stop point #10 @ 98000 ps;  
+
+Stop point #9 @ 102000 ps;  
+UVM_INFO ../seq_lib/elem_seqs/ahb_ram_single_write_seq.sv(27) @ 100000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq.single_write [body] Exiting...
+UVM_INFO ../seq_lib/elem_seqs/ahb_ram_single_read_seq.sv(20) @ 100000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq.single_read [body] Entered...
+
+Stop point #5 @ 102000 ps;  
+
+Stop point #3 @ 102000 ps;  
+
+Stop point #2 @ 102000 ps;  
+UVM_ERROR /opt/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.2/reg/uvm_reg_map.svh(1735) @ 102000: reporter [RegModel] Cannot get register by offset: Block rgm is not locked.
+
+Stop point #10 @ 106000 ps;  
+
+Stop point #9 @ 110000 ps;  
+UVM_INFO ../seq_lib/elem_seqs/ahb_ram_single_read_seq.sv(26) @ 108000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq.single_read [body] Exiting...
+UVM_INFO ../seq_lib/ahb_ram_base_virtual_sequence.sv(34) @ 108000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq [COMPSUC] val1 'h11 === val2 'h11
+UVM_INFO ../seq_lib/elem_seqs/ahb_ram_single_write_seq.sv(20) @ 108000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq.single_write [body] Entered...
+
+Stop point #5 @ 110000 ps;  
+
+Stop point #3 @ 110000 ps;  
+
+Stop point #2 @ 110000 ps;  
+UVM_ERROR /opt/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.2/reg/uvm_reg_map.svh(1735) @ 110000: reporter [RegModel] Cannot get register by offset: Block rgm is not locked.
+
+Stop point #10 @ 114000 ps;  
+dve> restart
+Chronologic VCS simulator copyright 1991-2018
+Contains Synopsys proprietary information.
+Compiler version O-2018.09-SP2_Full64; Runtime version O-2018.09-SP2_Full64;  Feb 20 23:19 2023
+NOTE: automatic random seed used: 959169784
+UVM_INFO /opt/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.2/base/uvm_root.svh(402) @ 0: reporter [UVM/RELNOTES] 
+----------------------------------------------------------------
+UVM-1.2.Synopsys
+(C) 2007-2014 Mentor Graphics Corporation
+(C) 2007-2014 Cadence Design Systems, Inc.
+(C) 2006-2014 Synopsys, Inc.
+(C) 2011-2013 Cypress Semiconductor Corp.
+(C) 2013-2014 NVIDIA Corporation
+----------------------------------------------------------------
+
+  ***********       IMPORTANT RELEASE NOTES         ************
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_NO_DEPRECATED undefined.
+  See http://www.eda.org/svdb/view.php?id=3313 for more details.
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_OBJECT_DO_NOT_NEED_CONSTRUCTOR undefined.
+  See http://www.eda.org/svdb/view.php?id=3770 for more details.
+
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+
+VCD+ Writer O-2018.09-SP2_Full64 Copyright (c) 1991-2018 by Synopsys Inc.
+The file '/home/verifier/DVT_Code/AHB_RAM/uvm/sim/inter.vpd' was opened successfully.
+GUI mode
+
+Stop point #1 @ 0 ps;  
+UVM_INFO @ 0: reporter [RNTST] Running test ahb_ram_smoke_test...
+
+Stop point #2 @ 0 ps;  
+
+Stop point #10 @ 82000 ps;  
+UVM_INFO ../seq_lib/ahb_ram_base_virtual_sequence.sv(23) @ 0: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq [body] Entered ...
+UVM_INFO ../seq_lib/ahb_ram_base_virtual_sequence.sv(28) @ 78000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq [body] Exiting ...
+UVM_INFO ../seq_lib/ahb_ram_smoke_virt_seq.sv(14) @ 78000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq [body] Entered ...
+UVM_INFO ../seq_lib/elem_seqs/ahb_ram_single_write_seq.sv(20) @ 78000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq.single_write [body] Entered...
+
+Stop point #9 @ 86000 ps;  
+UVM_INFO ../seq_lib/elem_seqs/ahb_ram_single_write_seq.sv(27) @ 84000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq.single_write [body] Exiting...
+UVM_INFO ../seq_lib/elem_seqs/ahb_ram_single_read_seq.sv(20) @ 84000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq.single_read [body] Entered...
+
+Stop point #5 @ 86000 ps;  
+
+Stop point #3 @ 86000 ps;  
+
+Stop point #2 @ 86000 ps;  
+UVM_ERROR /opt/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.2/reg/uvm_reg_map.svh(1735) @ 86000: reporter [RegModel] Cannot get register by offset: Block rgm is not locked.
+
+Stop point #11 @ 90000 ps;  
+
+Stop point #10 @ 90000 ps;  
+
+Stop point #9 @ 94000 ps;  
+UVM_INFO ../seq_lib/elem_seqs/ahb_ram_single_read_seq.sv(26) @ 92000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq.single_read [body] Exiting...
+UVM_INFO ../seq_lib/ahb_ram_base_virtual_sequence.sv(34) @ 92000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq [COMPSUC] val1 'h0 === val2 'h0
+UVM_INFO ../seq_lib/elem_seqs/ahb_ram_single_write_seq.sv(20) @ 92000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq.single_write [body] Entered...
+
+Stop point #5 @ 94000 ps;  
+
+Stop point #3 @ 94000 ps;  
+
+Stop point #2 @ 94000 ps;  
+UVM_ERROR /opt/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.2/reg/uvm_reg_map.svh(1735) @ 94000: reporter [RegModel] Cannot get register by offset: Block rgm is not locked.
+
+Stop point #11 @ 98000 ps;  
+
+Stop point #10 @ 98000 ps;  
+
+Stop point #9 @ 102000 ps;  
+UVM_INFO ../seq_lib/elem_seqs/ahb_ram_single_write_seq.sv(27) @ 100000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq.single_write [body] Exiting...
+UVM_INFO ../seq_lib/elem_seqs/ahb_ram_single_read_seq.sv(20) @ 100000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq.single_read [body] Entered...
+
+Stop point #5 @ 102000 ps;  
+
+Stop point #3 @ 102000 ps;  
+
+Stop point #2 @ 102000 ps;  
+UVM_ERROR /opt/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.2/reg/uvm_reg_map.svh(1735) @ 102000: reporter [RegModel] Cannot get register by offset: Block rgm is not locked.
+
+Stop point #11 @ 106000 ps;  
+
+Stop point #10 @ 106000 ps;  
+dve> restart
+Chronologic VCS simulator copyright 1991-2018
+Contains Synopsys proprietary information.
+Compiler version O-2018.09-SP2_Full64; Runtime version O-2018.09-SP2_Full64;  Feb 20 23:30 2023
+NOTE: automatic random seed used: 2048344254
+UVM_INFO /opt/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.2/base/uvm_root.svh(402) @ 0: reporter [UVM/RELNOTES] 
+----------------------------------------------------------------
+UVM-1.2.Synopsys
+(C) 2007-2014 Mentor Graphics Corporation
+(C) 2007-2014 Cadence Design Systems, Inc.
+(C) 2006-2014 Synopsys, Inc.
+(C) 2011-2013 Cypress Semiconductor Corp.
+(C) 2013-2014 NVIDIA Corporation
+----------------------------------------------------------------
+
+  ***********       IMPORTANT RELEASE NOTES         ************
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_NO_DEPRECATED undefined.
+  See http://www.eda.org/svdb/view.php?id=3313 for more details.
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_OBJECT_DO_NOT_NEED_CONSTRUCTOR undefined.
+  See http://www.eda.org/svdb/view.php?id=3770 for more details.
+
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+
+VCD+ Writer O-2018.09-SP2_Full64 Copyright (c) 1991-2018 by Synopsys Inc.
+The file '/home/verifier/DVT_Code/AHB_RAM/uvm/sim/inter.vpd' was opened successfully.
+GUI mode
+
+Stop point #1 @ 0 ps;  
+UVM_INFO @ 0: reporter [RNTST] Running test ahb_ram_smoke_test...
+
+Stop point #2 @ 0 ps;  
+UVM_INFO ../seq_lib/ahb_ram_base_virtual_sequence.sv(23) @ 0: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq [body] Entered ...
+UVM_INFO ../seq_lib/ahb_ram_base_virtual_sequence.sv(28) @ 78000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq [body] Exiting ...
+UVM_INFO ../seq_lib/ahb_ram_smoke_virt_seq.sv(14) @ 78000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq [body] Entered ...
+UVM_INFO ../seq_lib/elem_seqs/ahb_ram_single_write_seq.sv(20) @ 78000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq.single_write [body] Entered...
+
+Stop point #10 @ 82000 ps;  
+
+Stop point #9 @ 82000 ps;  
+
+Stop point #8 @ 86000 ps;  
+UVM_INFO ../seq_lib/elem_seqs/ahb_ram_single_write_seq.sv(27) @ 84000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq.single_write [body] Exiting...
+UVM_INFO ../seq_lib/elem_seqs/ahb_ram_single_read_seq.sv(20) @ 84000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq.single_read [body] Entered...
+
+Stop point #5 @ 86000 ps;  
+
+Stop point #3 @ 86000 ps;  
+
+Stop point #2 @ 86000 ps;  
+UVM_ERROR /opt/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.2/reg/uvm_reg_map.svh(1735) @ 86000: reporter [RegModel] Cannot get register by offset: Block rgm is not locked.
+
+Stop point #10 @ 90000 ps;  
+
+Stop point #9 @ 90000 ps;  
+
+Stop point #8 @ 94000 ps;  
+UVM_INFO ../seq_lib/elem_seqs/ahb_ram_single_read_seq.sv(26) @ 92000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq.single_read [body] Exiting...
+UVM_INFO ../seq_lib/ahb_ram_base_virtual_sequence.sv(34) @ 92000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq [COMPSUC] val1 'h0 === val2 'h0
+UVM_INFO ../seq_lib/elem_seqs/ahb_ram_single_write_seq.sv(20) @ 92000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq.single_write [body] Entered...
+
+Stop point #5 @ 94000 ps;  
+
+Stop point #3 @ 94000 ps;  
+
+Stop point #2 @ 94000 ps;  
+UVM_ERROR /opt/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.2/reg/uvm_reg_map.svh(1735) @ 94000: reporter [RegModel] Cannot get register by offset: Block rgm is not locked.
+
+Stop point #10 @ 98000 ps;  
+
+Stop point #9 @ 98000 ps;  
+
+Stop point #8 @ 102000 ps;  
+UVM_INFO ../seq_lib/elem_seqs/ahb_ram_single_write_seq.sv(27) @ 100000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq.single_write [body] Exiting...
+UVM_INFO ../seq_lib/elem_seqs/ahb_ram_single_read_seq.sv(20) @ 100000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq.single_read [body] Entered...
+
+Stop point #5 @ 102000 ps;  
+
+Stop point #3 @ 102000 ps;  
+
+Stop point #2 @ 102000 ps;  
+UVM_ERROR /opt/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.2/reg/uvm_reg_map.svh(1735) @ 102000: reporter [RegModel] Cannot get register by offset: Block rgm is not locked.
+
+Stop point #10 @ 106000 ps;  
+
+Stop point #9 @ 106000 ps;  
+
+Stop point #8 @ 110000 ps;  
+UVM_INFO ../seq_lib/elem_seqs/ahb_ram_single_read_seq.sv(26) @ 108000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq.single_read [body] Exiting...
+UVM_INFO ../seq_lib/ahb_ram_base_virtual_sequence.sv(34) @ 108000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq [COMPSUC] val1 'h11 === val2 'h11
+UVM_INFO ../seq_lib/elem_seqs/ahb_ram_single_write_seq.sv(20) @ 108000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq.single_write [body] Entered...
+
+Stop point #5 @ 110000 ps;  
+
+Stop point #3 @ 110000 ps;  
+
+Stop point #2 @ 110000 ps;  
+UVM_ERROR /opt/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.2/reg/uvm_reg_map.svh(1735) @ 110000: reporter [RegModel] Cannot get register by offset: Block rgm is not locked.
+
+Stop point #10 @ 114000 ps;  
+
+Stop point #9 @ 114000 ps;  
+
+Stop point #8 @ 118000 ps;  
+UVM_INFO ../seq_lib/elem_seqs/ahb_ram_single_write_seq.sv(27) @ 116000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq.single_write [body] Exiting...
+UVM_INFO ../seq_lib/elem_seqs/ahb_ram_single_read_seq.sv(20) @ 116000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq.single_read [body] Entered...
+
+Stop point #5 @ 118000 ps;  
+
+Stop point #2 @ 118000 ps;  
+UVM_ERROR /opt/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.2/reg/uvm_reg_map.svh(1735) @ 118000: reporter [RegModel] Cannot get register by offset: Block rgm is not locked.
+
+Stop point #10 @ 122000 ps;  
+
+Stop point #9 @ 122000 ps;  
+
+Stop point #12 @ 126000 ps;  
+UVM_INFO ../seq_lib/elem_seqs/ahb_ram_single_read_seq.sv(26) @ 124000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq.single_read [body] Exiting...
+UVM_INFO ../seq_lib/ahb_ram_base_virtual_sequence.sv(34) @ 124000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq [COMPSUC] val1 'h22 === val2 'h22
+UVM_INFO ../seq_lib/elem_seqs/ahb_ram_single_write_seq.sv(20) @ 124000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq.single_write [body] Entered...
+
+Stop point #8 @ 126000 ps;  
+
+Stop point #5 @ 126000 ps;  
+
+Stop point #2 @ 126000 ps;  
+UVM_ERROR /opt/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.2/reg/uvm_reg_map.svh(1735) @ 126000: reporter [RegModel] Cannot get register by offset: Block rgm is not locked.
+
+Stop point #10 @ 130000 ps;  
+
+Stop point #9 @ 130000 ps;  
+
+Stop point #12 @ 134000 ps;  
+UVM_INFO ../seq_lib/elem_seqs/ahb_ram_single_write_seq.sv(27) @ 132000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq.single_write [body] Exiting...
+UVM_INFO ../seq_lib/elem_seqs/ahb_ram_single_read_seq.sv(20) @ 132000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq.single_read [body] Entered...
+
+Stop point #8 @ 134000 ps;  
+dve> restart
+Chronologic VCS simulator copyright 1991-2018
+Contains Synopsys proprietary information.
+Compiler version O-2018.09-SP2_Full64; Runtime version O-2018.09-SP2_Full64;  Feb 20 23:43 2023
+NOTE: automatic random seed used: 290447317
+UVM_INFO /opt/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.2/base/uvm_root.svh(402) @ 0: reporter [UVM/RELNOTES] 
+----------------------------------------------------------------
+UVM-1.2.Synopsys
+(C) 2007-2014 Mentor Graphics Corporation
+(C) 2007-2014 Cadence Design Systems, Inc.
+(C) 2006-2014 Synopsys, Inc.
+(C) 2011-2013 Cypress Semiconductor Corp.
+(C) 2013-2014 NVIDIA Corporation
+----------------------------------------------------------------
+
+  ***********       IMPORTANT RELEASE NOTES         ************
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_NO_DEPRECATED undefined.
+  See http://www.eda.org/svdb/view.php?id=3313 for more details.
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_OBJECT_DO_NOT_NEED_CONSTRUCTOR undefined.
+  See http://www.eda.org/svdb/view.php?id=3770 for more details.
+
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+
+VCD+ Writer O-2018.09-SP2_Full64 Copyright (c) 1991-2018 by Synopsys Inc.
+The file '/home/verifier/DVT_Code/AHB_RAM/uvm/sim/inter.vpd' was opened successfully.
+GUI mode
+
+Stop point #1 @ 0 ps;  
+UVM_INFO @ 0: reporter [RNTST] Running test ahb_ram_smoke_test...
+
+Stop point #2 @ 0 ps;  
+
+Stop point #10 @ 82000 ps;  
+UVM_INFO ../seq_lib/ahb_ram_base_virtual_sequence.sv(23) @ 0: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq [body] Entered ...
+UVM_INFO ../seq_lib/ahb_ram_base_virtual_sequence.sv(28) @ 78000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq [body] Exiting ...
+UVM_INFO ../seq_lib/ahb_ram_smoke_virt_seq.sv(14) @ 78000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq [body] Entered ...
+UVM_INFO ../seq_lib/elem_seqs/ahb_ram_single_write_seq.sv(20) @ 78000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq.single_write [body] Entered...
+
+Stop point #9 @ 82000 ps;  
+
+Stop point #11 @ 86000 ps;  
+UVM_INFO ../seq_lib/elem_seqs/ahb_ram_single_write_seq.sv(27) @ 84000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq.single_write [body] Exiting...
+UVM_INFO ../seq_lib/elem_seqs/ahb_ram_single_read_seq.sv(20) @ 84000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq.single_read [body] Entered...
+
+Stop point #8 @ 86000 ps;  
+
+Stop point #5 @ 86000 ps;  
+
+Stop point #2 @ 86000 ps;  
+UVM_ERROR /opt/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.2/reg/uvm_reg_map.svh(1735) @ 86000: reporter [RegModel] Cannot get register by offset: Block rgm is not locked.
+
+Stop point #10 @ 90000 ps;  
+
+Stop point #9 @ 90000 ps;  
+
+Stop point #8 @ 94000 ps;  
+UVM_INFO ../seq_lib/elem_seqs/ahb_ram_single_read_seq.sv(26) @ 92000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq.single_read [body] Exiting...
+UVM_INFO ../seq_lib/ahb_ram_base_virtual_sequence.sv(34) @ 92000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq [COMPSUC] val1 'h0 === val2 'h0
+UVM_INFO ../seq_lib/elem_seqs/ahb_ram_single_write_seq.sv(20) @ 92000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq.single_write [body] Entered...
+
+Stop point #5 @ 94000 ps;  
+
+Stop point #2 @ 94000 ps;  
+UVM_ERROR /opt/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.2/reg/uvm_reg_map.svh(1735) @ 94000: reporter [RegModel] Cannot get register by offset: Block rgm is not locked.
+
+Stop point #9 @ 98000 ps;  
+
+Stop point #8 @ 102000 ps;  
+UVM_INFO ../seq_lib/elem_seqs/ahb_ram_single_write_seq.sv(27) @ 100000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq.single_write [body] Exiting...
+UVM_INFO ../seq_lib/elem_seqs/ahb_ram_single_read_seq.sv(20) @ 100000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq.single_read [body] Entered...
+
+Stop point #5 @ 102000 ps;  
+
+Stop point #2 @ 102000 ps;  
+UVM_ERROR /opt/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.2/reg/uvm_reg_map.svh(1735) @ 102000: reporter [RegModel] Cannot get register by offset: Block rgm is not locked.
+
+Stop point #8 @ 110000 ps;  
+UVM_INFO ../seq_lib/elem_seqs/ahb_ram_single_read_seq.sv(26) @ 108000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq.single_read [body] Exiting...
+UVM_INFO ../seq_lib/ahb_ram_base_virtual_sequence.sv(34) @ 108000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq [COMPSUC] val1 'h11 === val2 'h11
+UVM_INFO ../seq_lib/elem_seqs/ahb_ram_single_write_seq.sv(20) @ 108000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq.single_write [body] Entered...
+
+Stop point #5 @ 110000 ps;  
+
+Stop point #2 @ 110000 ps;  
+UVM_ERROR /opt/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.2/reg/uvm_reg_map.svh(1735) @ 110000: reporter [RegModel] Cannot get register by offset: Block rgm is not locked.
+
+Stop point #8 @ 118000 ps;  
+UVM_INFO ../seq_lib/elem_seqs/ahb_ram_single_write_seq.sv(27) @ 116000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq.single_write [body] Exiting...
+UVM_INFO ../seq_lib/elem_seqs/ahb_ram_single_read_seq.sv(20) @ 116000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq.single_read [body] Entered...
+
+Stop point #5 @ 118000 ps;  
+
+Stop point #2 @ 118000 ps;  
+UVM_ERROR /opt/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.2/reg/uvm_reg_map.svh(1735) @ 118000: reporter [RegModel] Cannot get register by offset: Block rgm is not locked.
+
+Stop point #8 @ 126000 ps;  
+UVM_INFO ../seq_lib/elem_seqs/ahb_ram_single_read_seq.sv(26) @ 124000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq.single_read [body] Exiting...
+UVM_INFO ../seq_lib/ahb_ram_base_virtual_sequence.sv(34) @ 124000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq [COMPSUC] val1 'h22 === val2 'h22
+UVM_INFO ../seq_lib/elem_seqs/ahb_ram_single_write_seq.sv(20) @ 124000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq.single_write [body] Entered...
+
+Stop point #5 @ 126000 ps;  
+
+Stop point #2 @ 126000 ps;  
+UVM_ERROR /opt/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.2/reg/uvm_reg_map.svh(1735) @ 126000: reporter [RegModel] Cannot get register by offset: Block rgm is not locked.
+
+Stop point #8 @ 134000 ps;  
+UVM_INFO ../seq_lib/elem_seqs/ahb_ram_single_write_seq.sv(27) @ 132000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq.single_write [body] Exiting...
+UVM_INFO ../seq_lib/elem_seqs/ahb_ram_single_read_seq.sv(20) @ 132000: uvm_test_top.env.virt_sqr@@ahb_ram_smoke_virt_seq.single_read [body] Entered...
+
+Stop point #5 @ 134000 ps;  

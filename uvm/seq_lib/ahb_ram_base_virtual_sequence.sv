@@ -7,8 +7,12 @@ class ahb_ram_base_virtual_sequence extends uvm_sequence;
   ahb_ram_reg rgm;
   uvm_status_e status;
   bit [31:0] wr_val, rd_val;
-  `uvm_object_utils(ahb_ram_base_virtual_sequence)
 
+  //declare element sequences
+  ahb_ram_single_write_seq  single_write;
+  ahb_ram_single_read_seq   single_read;
+
+  `uvm_object_utils(ahb_ram_base_virtual_sequence)
   `uvm_declare_p_sequencer(ahb_ram_virtual_sequencer)
 
   function new(string name ="ahb_ram_base_virtual_sequence");
@@ -20,6 +24,7 @@ class ahb_ram_base_virtual_sequence extends uvm_sequence;
     cfg = p_sequencer.cfg;
     vif = cfg.vif;
     rgm = cfg.rgm;
+    wait_ready_for_stim();
     `uvm_info("body", "Exiting ...", UVM_LOW)
   endtask
 
@@ -39,6 +44,15 @@ class ahb_ram_base_virtual_sequence extends uvm_sequence;
 
   task wait_reset_signal_releassed();
     @(negedge vif.rstn);
+  endtask
+
+  task wait_cycles(int n=1);
+    repeat(n) @(posedge vif.clk);
+  endtask
+
+  task wait_ready_for_stim();
+    wait_reset_signal_releassed(); 
+    wait_cycles(10);
   endtask
 
 endclass
