@@ -3,3 +3,6 @@
 1 4 this 3
 1 6 wr_val 4
 1 43 ../seq_lib/ahb_ram_base_virtual_sequence.sv 5
+1 41 ../seq_lib/ahb_ram_diff_hsize_virt_seq.sv 6
+1 5 bsize 7
+1 41 ../seq_lib/ahb_ram_diff_haddr_virt_seq.sv 8
