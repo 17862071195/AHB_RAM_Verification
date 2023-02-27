@@ -6,3 +6,5 @@
 1 41 ../seq_lib/ahb_ram_diff_hsize_virt_seq.sv 6
 1 5 bsize 7
 1 41 ../seq_lib/ahb_ram_diff_haddr_virt_seq.sv 8
+1 40 ../seq_lib/ahb_ram_reset_w2r_virt_seq.sv 9
+1 46 ../seq_lib/ahb_ram_haddr_word_unaligned_seq.sv 10

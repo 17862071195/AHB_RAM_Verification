@@ -10,6 +10,8 @@
 /home/verifier/DVT_Code/AHB_RAM/uvm/seq_lib/ahb_ram_base_virtual_sequence.sv
 /home/verifier/DVT_Code/AHB_RAM/uvm/seq_lib/ahb_ram_diff_haddr_virt_seq.sv
 /home/verifier/DVT_Code/AHB_RAM/uvm/seq_lib/ahb_ram_diff_hsize_virt_seq.sv
+/home/verifier/DVT_Code/AHB_RAM/uvm/seq_lib/ahb_ram_haddr_word_unaligned_seq.sv
+/home/verifier/DVT_Code/AHB_RAM/uvm/seq_lib/ahb_ram_reset_w2r_virt_seq.sv
 /home/verifier/DVT_Code/AHB_RAM/uvm/seq_lib/ahb_ram_seq_lib.svh
 /home/verifier/DVT_Code/AHB_RAM/uvm/seq_lib/ahb_ram_smoke_virt_seq.sv
 /home/verifier/DVT_Code/AHB_RAM/uvm/seq_lib/elem_seqs/ahb_ram_base_element_sequence.sv
@@ -21,6 +23,8 @@
 /home/verifier/DVT_Code/AHB_RAM/uvm/test/ahb_ram_base_test.sv
 /home/verifier/DVT_Code/AHB_RAM/uvm/test/ahb_ram_diff_haddr_test.sv
 /home/verifier/DVT_Code/AHB_RAM/uvm/test/ahb_ram_diff_hsize_test.sv
+/home/verifier/DVT_Code/AHB_RAM/uvm/test/ahb_ram_haddr_word_unaligned_test.sv
+/home/verifier/DVT_Code/AHB_RAM/uvm/test/ahb_ram_reset_w2r_test.sv
 /home/verifier/DVT_Code/AHB_RAM/uvm/test/ahb_ram_smoke_test.sv
 /home/verifier/DVT_Code/AHB_RAM/uvm/test/ahb_ram_tests.svh
 /home/verifier/DVT_Code/AHB_RAM/uvm/vip_lib/lvc_ahb/lvc_ahb_agent_configuration.sv

@@ -1,6 +1,6 @@
 # Begin_DVE_Session_Save_Info
 # DVE full session
-# Saved on Thu Feb 23 22:26:24 2023
+# Saved on Mon Feb 27 23:24:12 2023
 # Designs open: 1
 #   Sim: /home/verifier/DVT_Code/AHB_RAM/uvm/sim/out/obj/ahb_ram_tb.simv
 # Toplevel windows open: 1
@@ -118,7 +118,7 @@ gui_sync_global -id ${TopLevel.2} -option true
 # MDI window settings
 set Wave.1 [gui_create_window -type {Wave}  -parent ${TopLevel.2}]
 gui_show_window -window ${Wave.1} -show_state maximized
-gui_update_layout -id ${Wave.1} {{show_state maximized} {dock_state undocked} {dock_on_new_line false} {child_wave_left 743} {child_wave_right 1811} {child_wave_colname 369} {child_wave_colvalue 370} {child_wave_col1 0} {child_wave_col2 1}}
+gui_update_layout -id ${Wave.1} {{show_state maximized} {dock_state undocked} {dock_on_new_line false} {child_wave_left 743} {child_wave_right 1811} {child_wave_colname 369} {child_wave_colvalue 369} {child_wave_col1 0} {child_wave_col2 1}}
 
 # End MDI window settings
 
@@ -138,11 +138,11 @@ gui_update_statusbar_target_frame ${TopLevel.2}
 # DVE Open design session: 
 
 if { [llength [lindex [gui_get_db -design Sim] 0]] == 0 } {
-gui_set_env SIMSETUP::SIMARGS {{-ucligui -l run.log +ntb_random_seed_automatic +UVM_TESTNAME=ahb_ram_diff_haddr_test -UVM_VERBOSITY=UVM_HIGH -cm_dir out/cov.vdb -cm_name ahb_ram_diff_haddr_test_0223222246 -do ahb_ram_sim_run.do}}
-gui_set_env SIMSETUP::SIMEXE {/home/verifier/DVT_Code/AHB_RAM/uvm/sim/out/obj/ahb_ram_tb.simv}
+gui_set_env SIMSETUP::SIMARGS {{-a run.log +ntb_random_seed_automatic +UVM_TESTNAME=ahb_ram_diff_hsize_test -UVM_VERBOSITY=UVM_HIGH -cm_dir out/cov.vdb -cm_name ahb_ram_diff_hsize_test_0227232107 -do ahb_ram_sim_run.do}}
+gui_set_env SIMSETUP::SIMEXE {out/obj/ahb_ram_tb.simv}
 gui_set_env SIMSETUP::ALLOW_POLL {0}
 if { ![gui_is_db_opened -db {/home/verifier/DVT_Code/AHB_RAM/uvm/sim/out/obj/ahb_ram_tb.simv}] } {
-gui_sim_run Ucli -exe ahb_ram_tb.simv -args {-ucligui -l run.log +ntb_random_seed_automatic +UVM_TESTNAME=ahb_ram_diff_haddr_test -UVM_VERBOSITY=UVM_HIGH -cm_dir out/cov.vdb -cm_name ahb_ram_diff_haddr_test_0223222246 -do ahb_ram_sim_run.do} -dir /home/verifier/DVT_Code/AHB_RAM/uvm/sim/out/obj -nosource
+gui_sim_run Ucli -exe ahb_ram_tb.simv -args { -a run.log +ntb_random_seed_automatic +UVM_TESTNAME=ahb_ram_diff_hsize_test -UVM_VERBOSITY=UVM_HIGH -cm_dir out/cov.vdb -cm_name ahb_ram_diff_hsize_test_0227232107 -do ahb_ram_sim_run.do -ucligui} -dir /home/verifier/DVT_Code/AHB_RAM/uvm/sim/out/obj -nosource
 }
 }
 if { ![gui_sim_state -check active] } {error "Simulator did not start correctly" error}
@@ -167,11 +167,11 @@ gui_set_time_units 1ps
 gui_load_child_values {ahb_ram_tb.dut}
 
 
-set _session_group_2 Group1
-gui_sg_create "$_session_group_2"
-set Group1 "$_session_group_2"
+set _session_group_1 Group1
+gui_sg_create "$_session_group_1"
+set Group1 "$_session_group_1"
 
-gui_sg_addsignal -group "$_session_group_2" { ahb_ram_tb.dut.HCLK ahb_ram_tb.dut.HRESETn ahb_ram_tb.dut.HSELBRAM ahb_ram_tb.dut.HREADY ahb_ram_tb.dut.HTRANS ahb_ram_tb.dut.HSIZE ahb_ram_tb.dut.HWRITE ahb_ram_tb.dut.HADDR ahb_ram_tb.dut.HWDATA ahb_ram_tb.dut.HREADYOUT ahb_ram_tb.dut.HRESP ahb_ram_tb.dut.HRDATA }
+gui_sg_addsignal -group "$_session_group_1" { ahb_ram_tb.dut.HCLK ahb_ram_tb.dut.HRESETn ahb_ram_tb.dut.HSELBRAM ahb_ram_tb.dut.HREADY ahb_ram_tb.dut.HTRANS ahb_ram_tb.dut.HSIZE ahb_ram_tb.dut.HWRITE ahb_ram_tb.dut.HADDR ahb_ram_tb.dut.HWDATA ahb_ram_tb.dut.HREADYOUT ahb_ram_tb.dut.HRESP ahb_ram_tb.dut.HRDATA }
 
 # Global: Highlighting
 
@@ -181,7 +181,7 @@ gui_change_stack_mode -mode list
 # Post database loading setting...
 
 # Restore C1 time
-gui_set_time -C1_only 66596000
+gui_set_time -C1_only 2676000
 
 
 
@@ -209,7 +209,7 @@ gui_list_set_height -id Wave -height 25
 set origGroupCreationState [gui_list_create_group_when_add -wave]
 gui_list_create_group_when_add -wave -disable
 gui_marker_set_ref -id ${Wave.1}  C1
-gui_wv_zoom_timerange -id ${Wave.1} 65667071 67524399
+gui_wv_zoom_timerange -id ${Wave.1} 1747402 3604730
 gui_list_add_group -id ${Wave.1} -after {New Group} {Group1}
 gui_seek_criteria -id ${Wave.1} {Any Edge}
 
@@ -228,7 +228,7 @@ gui_list_set_filter -id ${Wave.1} -list { {Buffer 1} {Input 1} {Others 1} {Linka
 gui_list_set_filter -id ${Wave.1} -text {*}
 gui_list_set_insertion_bar  -id ${Wave.1} -group Group1  -position in
 
-gui_marker_move -id ${Wave.1} {C1} 66596000
+gui_marker_move -id ${Wave.1} {C1} 2676000
 gui_view_scroll -id ${Wave.1} -vertical -set 0
 gui_show_grid -id ${Wave.1} -enable false
 # Restore toplevel window zorder

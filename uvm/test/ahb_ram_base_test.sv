@@ -5,6 +5,7 @@ class ahb_ram_base_test extends uvm_test;
   ahb_ram_config cfg;
   ahb_ram_env env;
   ahb_ram_reg rgm;
+  virtual ahb_ram_if vif;
 
   `uvm_component_utils(ahb_ram_base_test)
 
@@ -19,6 +20,7 @@ class ahb_ram_base_test extends uvm_test;
     uvm_config_db#(ahb_ram_reg)::set(this,"env","rgm", rgm);
     cfg = ahb_ram_config::type_id::create("cfg");
     cfg.rgm = rgm;
+    vif = cfg.vif;
     // config parameter of scorenoard
     cfg.addr_start = 32'h0;
     cfg.addr_end = 32'h0000_FFFF;

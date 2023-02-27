@@ -55,5 +55,16 @@
                                     // the slave or in case of EBT 
   } status_enum;
 
+  function bit [31:0] extract_valid_data(bit [`LVC_AHB_MAX_ADDR_WIDTH-1 : 0] addr
+                                        ,bit [`LVC_AHB_MAX_DATA_WIDTH-1 : 0] data
+                                        ,burst_size_enum bsize);
+    case(bsize)
+      BURST_SIZE_8BIT  : return (data >> (addr[1:0]*8)) & 8'hFF;                              
+      BURST_SIZE_16BIT : return (data >> (addr[1]*16))  & 16'hFFFF;                                       
+      BURST_SIZE_32BIT : return data & 32'hFFFF_FFFF;                                                 
+      BURST_SIZE_64BIT : `uvm_error("TYPEERR", "burst size not supported")   
+      default : begin `uvm_error("TYPEERR", "burst size not supported") end
+    endcase
+  endfunction
 
 `endif // LVC_AHB_TYPES_SVH

@@ -1,4 +1,3 @@
-ucliGUI::start /home/verifier/DVT_Code/AHB_RAM/uvm/sim/out/obj/ahb_ram_tb.simv -ucligui -l run.log +ntb_random_seed_automatic +UVM_TESTNAME=ahb_ram_diff_haddr_test -UVM_VERBOSITY=UVM_HIGH -cm_dir out/cov.vdb -cm_name ahb_ram_diff_haddr_test_0223222246 -do ahb_ram_sim_run.do
 set ucliGUI::state
 set ucliGUI::state
 ucliCore::getToolPID
@@ -11,13 +10,13 @@ synopsys::xml set_only_active_frame <data value="1" />
 synopsys::xml set_variable_frame_id <data value="1" />
 synUtils::setDVEInitPhase 1
 synopsys::dump -type VPD -file /home/verifier/DVT_Code/AHB_RAM/uvm/sim/inter.vpd -locking
-synopsys::dump -autoflush on -fid VPD1
-set ::dve_fid VPD1
+synopsys::dump -autoflush on -fid VPD0
+set ::dve_fid VPD0
 synUtils::setDVEInitPhase 0
 ucliCore::getToolPID
-synUtils::sendTool -active _icl_setToolSocket /tmp/smlnpOrNHTO
-synUtils::sendTool -active {_icl_start_rpc -version "O-2018.09-SP2_Full64" -sync_file /tmp/vcs_dve_rpc.verifier.109754}
-synUtils::sendTool -active {_icl_createSharedMemory /tmp/vcs_dve_general.verifier.109754}
+synUtils::sendTool -active _icl_setToolSocket /tmp/smlnpncQxPv
+synUtils::sendTool -active {_icl_start_rpc -version "O-2018.09-SP2_Full64" -sync_file /tmp/vcs_dve_rpc.verifier.96665}
+synUtils::sendTool -active {_icl_createSharedMemory /tmp/vcs_dve_general.verifier.96665}
 config endofsim noexit
 config onfail enable all
 config syscaddplainmembers
@@ -35,99 +34,9 @@ set origWaveHeight [gui_get_pref_value -category Wave -key waveRowHeight]
 set origGroupCreationState [gui_list_create_group_when_add -wave]
 if {$origGroupCreationState} { 	gui_list_create_group_when_add -wave -enable }
 if { $groupExD } {  gui_msg_report -code DVWW028 }
-# Begin_DVE_Session_Save_Info
-# DVE restart session
-# Saved on Thu Feb 23 22:24:33 2023
-# Designs open: 1
-#   Sim: /home/verifier/DVT_Code/AHB_RAM/uvm/sim/out/obj/ahb_ram_tb.simv
-# Toplevel windows open: 2
-# 	TopLevel.1
-# 	TopLevel.2
-#   Source.1: uvm_custom_install_recording
-#   Wave.1: 12 signals
-#   Group count = 1
-#   Group Group1 signal count = 12
-# End_DVE_Session_Save_Info
-# DVE version: O-2018.09-SP2_Full64
-# DVE build date: Feb 28 2019 23:39:41
-#<Session mode="Restart" path=".restartSimSession.tcl" type="Debug">
-# Application preferences
-#<WindowLayout>
-# DVE top-level session
-# Create and position top-level window: TopLevel.1
-set TopLevel.1 TopLevel.1
-# Docked window settings
-set HSPane.1 HSPane.1
-set Hier.1 Hier.1
-set Stack.1 Stack.1
-set Class.1 Class.1
-set Object.1 Object.1
-set DLPane.1 DLPane.1
-set Data.1 Data.1
-set Local.1 Local.1
-set Member.1 Member.1
-set Console.1 Console.1
-# MDI window settings
-set Source.1 Source.1
-# End MDI window settings
-# Create and position top-level window: TopLevel.2
-set TopLevel.2 TopLevel.2
-# Docked window settings
-# MDI window settings
-set Wave.1 Wave.1
-# End MDI window settings
-#</WindowLayout>
-#<Database>
-#</Database>
-# DVE Global setting session:
-# Global: Breakpoints
-# Global: Bus
-# Global: Expressions
-# Global: Signal Time Shift
-# Global: Signal Compare
-# Global: Signal Groups
-synopsys::dump -add {ahb_ram_tb.dut} -scope "." -depth 1 -fid VPD1
-set _session_group_1 Group1
-set Group1 "$_session_group_1"
-# Global: Highlighting
-# Global: Stack
-# Post database loading setting...
-# Save global setting...
-# Wave/List view global setting
-# Close all empty TopLevel windows
-foreach __top [gui_ekki_get_window_ids -type TopLevel] {     if { [llength [gui_ekki_get_window_ids -parent $__top]] == 0} {         gui_close_window -window $__top     } }
-# DVE View/pane content session:
-# Hier 'Hier.1'
-catch {gui_list_select -id ${Hier.1} {uvm_custom_install_recording}}
-# Class 'Class.1'
-# Member 'Member.1'
-# Data 'Data.1'
-# Source 'Source.1'
-# Warning: Class view not found.
-# View 'Wave.1'
-set groupExD [gui_get_pref_value -category Wave -key exclusiveSG]
-set origWaveHeight [gui_get_pref_value -category Wave -key waveRowHeight]
-set origGroupCreationState [gui_list_create_group_when_add -wave]
-if {$origGroupCreationState} { 	gui_list_create_group_when_add -wave -enable }
-if { $groupExD } {  gui_msg_report -code DVWW028 }
-# Restore toplevel window zorder
-# The toplevel window could be closed if it has no view/pane
-if {[gui_exist_window -window ${TopLevel.2}]} { 	gui_set_active_window -window ${TopLevel.2} 	gui_set_active_window -window ${Wave.1} }
-if {[gui_exist_window -window ${TopLevel.1}]} { 	gui_set_active_window -window ${TopLevel.1} 	gui_set_active_window -window ${Source.1} 	gui_set_active_window -window ${Console.1} }
-#</Session>
 synopsys::run
 set ucliGUI::state
 set ucliGUI::state
-set synopsys::env(time) 6574000
-set synopsys::env(time) 12028000
-set synopsys::env(time) 18876000
-set synopsys::env(time) 26380000
-set synopsys::env(time) 33092000
-set synopsys::env(time) 39148000
-set synopsys::env(time) 46172000
-set synopsys::env(time) 52684000
-set synopsys::env(time) 58908000
-set synopsys::env(time) 65116000
 set ucliGUI::state
 set ucliGUI::state
 synopsys::xml get_stop_data

@@ -13,6 +13,7 @@ class ahb_ram_config extends uvm_object;
   bit [31:0] addr_start; 
   bit [31:0] addr_end;
   int data_width;
+  logic init_logic = 1'bx;
   `uvm_object_utils(ahb_ram_config)
 
   lvc_ahb_agent_configuration ahb_cfg;

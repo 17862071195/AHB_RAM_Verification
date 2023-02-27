@@ -54,9 +54,9 @@ class ahb_ram_scoreboard extends ahb_ram_subscriber;
 
   function void store_data_with_hsize(lvc_ahb_transaction tr, int beat);
     case(tr.burst_size)
-      BURST_SIZE_8BIT    : begin mem[tr.addr] = tr.data[beat] & 32'h0000_00FF; end
-      BURST_SIZE_16BIT   : begin mem[tr.addr] = tr.data[beat] & 32'h0000_FFFF; end
-      BURST_SIZE_32BIT   : begin mem[tr.addr] = tr.data[beat] & 32'hFFFF_FFFF; end
+      BURST_SIZE_8BIT    : begin mem[{tr.addr[31:2],2'b00}] = extract_valid_beat(tr, beat);  end
+      BURST_SIZE_16BIT   : begin mem[{tr.addr[31:2],2'b00}] = extract_valid_beat(tr, beat);  end
+      BURST_SIZE_32BIT   : begin mem[{tr.addr[31:2],2'b00}] = extract_valid_beat(tr, beat);  end
       BURST_SIZE_64BIT   : begin `uvm_error("TYPEERR", "burst size not supprted") end
       BURST_SIZE_128BIT  : begin `uvm_error("TYPEERR", "burst size not supprted") end
       BURST_SIZE_256BIT  : begin `uvm_error("TYPEERR", "burst size not supprted") end
@@ -66,7 +66,7 @@ class ahb_ram_scoreboard extends ahb_ram_subscriber;
     endcase  
   endfunction
 
-   function bit check_data_with_hburst(lvc_ahb_transaction tr);
+  function bit check_data_with_hburst(lvc_ahb_transaction tr);
      case(tr.burst_type)
       SINGLE : begin check_data_with_hburst = check_data_with_hsize(tr, 0); end
       INCR   : begin `uvm_error("TYPEERR", "burst type not be supported yet") end
@@ -81,26 +81,34 @@ class ahb_ram_scoreboard extends ahb_ram_subscriber;
   endfunction
  
   function bit check_data_with_hsize(lvc_ahb_transaction tr, int beat);
-    bit [63:0] data;
-    case(tr.burst_size)
-      BURST_SIZE_8BIT    : begin data = tr.data[beat] & 32'h0000_00FF; if(data == mem[tr.addr]) check_data_with_hsize = 1; end
-      BURST_SIZE_16BIT   : begin data = tr.data[beat] & 32'h0000_FFFF; if(data == mem[tr.addr]) check_data_with_hsize = 1; end
-      BURST_SIZE_32BIT   : begin data = tr.data[beat] & 32'hFFFF_FFFF; if(data == mem[tr.addr]) check_data_with_hsize = 1; end
-      BURST_SIZE_64BIT   : begin `uvm_error("TYPEERR", "burst size not supprted") end
-      BURST_SIZE_128BIT  : begin `uvm_error("TYPEERR", "burst size not supprted") end
-      BURST_SIZE_256BIT  : begin `uvm_error("TYPEERR", "burst size not supprted") end
-      BURST_SIZE_512BIT  : begin `uvm_error("TYPEERR", "burst size not supprted") end
-      BURST_SIZE_1024BIT : begin `uvm_error("TYPEERR", "burst size not supprted") end
-      default : begin `uvm_error("TYPEERR", "burst size not supprted") end
-    endcase  
+    bit [31:0] tdata = extract_valid_data(tr.addr, tr.data[beat], tr.burst_size);
+    bit [31:0] mdata = extract_valid_data(tr.addr, mem[{tr.addr[31:2],2'b00}], tr.burst_size);
+    check_data_with_hsize = tdata == mdata ? 1 : 0;
     if(check_data_with_hsize == 1) 
-      `uvm_info("CHECKDATA", $sformatf("ahb_ram[%x] is expected value: 'h%x = 'h%x", tr.addr, data, mem[tr.addr]), UVM_HIGH)
+      `uvm_info("CHECKDATA", $sformatf("ahb_ram[%0x] is expected value: 'h%x = 'h%x", tr.addr, tdata, mdata), UVM_LOW)
     else begin
-      `uvm_error("CHECKDATA", $sformatf("ahb_ram[%x] is not expected value: 'h%x = 'h%x", tr.addr, data, mem[tr.addr]))
+      `uvm_error("CHECKDATA", $sformatf("ahb_ram[%0x] is not expected value: 'h%x != 'h%x", tr.addr, tdata, mdata))
       cfg.scb_check_error++; 
     end
     cfg.scb_check_count++; 
   endfunction
+
+  function bit [31:0] extract_valid_beat(lvc_ahb_transaction tr, int beat);
+    bit [31:0] mdata = mem[{tr.addr[31:2],2'b00}];
+    bit [31:0] tdata = tr.data[beat];
+    case(tr.burst_size)
+      BURST_SIZE_8BIT  : mdata[(tr.addr[1:0]*8+7) -: 8]  =  tdata >> (tr.addr[1:0]*8);                              
+      BURST_SIZE_16BIT : mdata[(tr.addr[1]*16+15) -: 16]  =  tdata >> (tr.addr[1]*16);                                       
+      BURST_SIZE_32BIT : mdata = tdata;                                                 
+      BURST_SIZE_64BIT : `uvm_error("TYPEERR", "burst size not supported")   
+      default : begin `uvm_error("TYPEERR", "burst size not supported") end
+    endcase
+    return mdata;
+  endfunction
+
+
+
+ 
 
 endclass
 `endif // AHB_RAM_SCOREBOARD_SV

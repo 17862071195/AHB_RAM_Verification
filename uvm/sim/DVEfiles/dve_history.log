@@ -7,28 +7,28 @@ gui_create_pref_key -category {dlg_settings} -key {tableWithImmediatePopup} -val
 
 # State setting overrides
 gui_state_default_create -off -ini
-gui_set_state_value -category Globals -key recent_sessions -value {{gui_load_session -ignore_errors -file /home/verifier/DVT_Code/AHB_RAM/uvm/sim/ahb_ram_debug_wave.do}}
+gui_set_state_value -category Globals -key recent_sessions -value {{gui_load_session -ignore_errors -file /home/verifier/DVT_Code/AHB_RAM/uvm/sim/ahb_ram_sim_run.do.tcl} {gui_load_session -ignore_errors -file /home/verifier/DVT_Code/AHB_RAM/uvm/sim/ahb_ram_debug_wave.do}}
 gui_set_state_value -category Layout -key child_console_size_x -value 2559
-gui_set_state_value -category Layout -key child_console_size_y -value 835
-gui_set_state_value -category Layout -key child_data_coltype -value 168
-gui_set_state_value -category Layout -key child_data_colvalue -value 147
-gui_set_state_value -category Layout -key child_data_colvariable -value 314
-gui_set_state_value -category Layout -key child_data_size_x -value 636
-gui_set_state_value -category Layout -key child_data_size_y -value 415
+gui_set_state_value -category Layout -key child_console_size_y -value 702
+gui_set_state_value -category Layout -key child_data_coltype -value 231
+gui_set_state_value -category Layout -key child_data_colvalue -value 210
+gui_set_state_value -category Layout -key child_data_colvariable -value 377
+gui_set_state_value -category Layout -key child_data_size_x -value 829
+gui_set_state_value -category Layout -key child_data_size_y -value 548
 gui_set_state_value -category Layout -key child_hier_col3 -value {-1}
 gui_set_state_value -category Layout -key child_hier_colhier -value 331
 gui_set_state_value -category Layout -key child_hier_colpd -value 0
-gui_set_state_value -category Layout -key child_hier_size_x -value 367
-gui_set_state_value -category Layout -key child_hier_size_y -value 415
+gui_set_state_value -category Layout -key child_hier_size_x -value 387
+gui_set_state_value -category Layout -key child_hier_size_y -value 548
 gui_set_state_value -category Layout -key child_source_docknewline -value false
 gui_set_state_value -category Layout -key child_source_pos_x -value {-2}
 gui_set_state_value -category Layout -key child_source_pos_y -value {-17}
-gui_set_state_value -category Layout -key child_source_size_x -value 1559
-gui_set_state_value -category Layout -key child_source_size_y -value 411
-gui_set_state_value -category Layout -key child_wave_colname -value 263
-gui_set_state_value -category Layout -key child_wave_colvalue -value 214
-gui_set_state_value -category Layout -key child_wave_left -value 482
-gui_set_state_value -category Layout -key child_wave_right -value 2072
+gui_set_state_value -category Layout -key child_source_size_x -value 1346
+gui_set_state_value -category Layout -key child_source_size_y -value 544
+gui_set_state_value -category Layout -key child_wave_colname -value 369
+gui_set_state_value -category Layout -key child_wave_colvalue -value 370
+gui_set_state_value -category Layout -key child_wave_left -value 743
+gui_set_state_value -category Layout -key child_wave_right -value 1811
 gui_set_state_value -category Layout -key main_pos_x -value 1
 gui_set_state_value -category Layout -key main_pos_y -value 38
 gui_set_state_value -category Layout -key main_size_x -value 2560
@@ -38,9 +38,9 @@ gui_set_state_value -category Layout -key stand_wave_child_pos_y -value {-17}
 gui_set_state_value -category Layout -key stand_wave_child_size_x -value 2564
 gui_set_state_value -category Layout -key stand_wave_child_size_y -value 1246
 gui_set_state_value -category Layout -key stand_wave_top_pos_x -value 1
-gui_set_state_value -category Layout -key stand_wave_top_pos_y -value 260
+gui_set_state_value -category Layout -key stand_wave_top_pos_y -value 38
 gui_set_state_value -category Layout -key stand_wave_top_size_x -value 2560
-gui_set_state_value -category Layout -key stand_wave_top_size_y -value 1596
+gui_set_state_value -category Layout -key stand_wave_top_size_y -value 1374
 gui_create_state_key -category FindDialog -key m_pMatchCase -value_type bool -value false
 gui_create_state_key -category FindDialog -key m_pMatchWord -value_type bool -value false
 gui_create_state_key -category FindDialog -key m_pUseCombo -value_type string -value {}
@@ -50,13 +50,9 @@ gui_state_default_create -off
 # Begin command logging
 gui_set_pref_value -category {Globals} -key {smart_resize} -value {false}
 gui_set_pref_value -category {Globals} -key {smart_resize} -value {true}
-gui_sim_run Ucli -exe out/obj/ahb_ram_tb.simv -args {-ucligui  -a run.log +ntb_random_seed_automatic +UVM_TESTNAME=ahb_ram_diff_haddr_test -UVM_VERBOSITY=UVM_HIGH -cm_dir out/cov.vdb -cm_name ahb_ram_diff_haddr_test_0223222246 -do ahb_ram_sim_run.do} -dir out/obj
+gui_sim_run Ucli -exe out/obj/ahb_ram_tb.simv -args {-ucligui  -a run.log +ntb_random_seed_automatic +UVM_TESTNAME=ahb_ram_haddr_word_unaligned_test -UVM_VERBOSITY=UVM_HIGH -cm_dir out/cov.vdb -cm_name ahb_ram_haddr_word_unaligned_test_0227232341 -do ahb_ram_sim_run.do} -dir out/obj
 gui_wv_zoom_timerange -id  Wave.1 0 227
 gui_wv_zoom_timerange -id  Wave.1 0 583
 gui_wv_zoom_timerange -id  Wave.1 0 583
-gui_wv_zoom_timerange -id  Wave.1 0 1857328
-gui_marker_move -id  Wave.1 C1 652295
-restart
-gui_sim_restart
-gui_sim_continue  
-gui_close_window -window TopLevel.1
+gui_wv_zoom_timerange -id  Wave.1 0 1857328ggui_sim_continue  
+ndow TopLevel.1

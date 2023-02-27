@@ -6,5 +6,7 @@
 `include "ahb_ram_smoke_virt_seq.sv"
 `include "ahb_ram_diff_hsize_virt_seq.sv"
 `include "ahb_ram_diff_haddr_virt_seq.sv"
+`include "ahb_ram_reset_w2r_virt_seq.sv"
+`include "ahb_ram_haddr_word_unaligned_seq.sv"
 
 `endif // AHB_RAM_SEQ_LIB_SVH
