@@ -12,7 +12,7 @@ class ahb_ram_diff_haddr_virt_seq extends ahb_ram_base_virtual_sequence;
     bit [31:0] addr, data;
     super.body();
     `uvm_info("body", "Entered ...", UVM_LOW)
-    for(int i=0; i<(cfg.addr_end>>4); i++) begin
+    for(int i=0; i<(cfg.addr_end>>8); i++) begin
       std::randomize(addr) with {addr[1:0] == 0; addr inside {['h1000:'hFFFF]};};
       std::randomize(wr_val) with {wr_val == (i<<8) + i;};
       data = wr_val;

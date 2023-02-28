@@ -1,0 +1,5 @@
+The design 'out/cov.vdb' was loaded successfully.
+The following tests are merged/loaded from "out/cov.vdb",
+    out/cov/ahb_ram_diff_haddr_test_0228215915
+    out/cov/ahb_ram_diff_haddr_test_0228220122
+    out/cov/ahb_ram_diff_haddr_test_0228220319
